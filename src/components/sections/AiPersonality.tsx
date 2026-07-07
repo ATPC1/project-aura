@@ -22,69 +22,69 @@ export default function AiPersonality() {
   const stats: StatCard[] = [
     {
       id: "beauty",
-      title: "Beauty Level",
+      title: "Beauty Level 💖✨",
       category: "AESTHETICS",
-      value: "9,999+",
-      status: "System Overflow ⚠️",
+      value: "9,999+ 👑🔥",
+      status: "System Overflow ⚠️🔥",
       icon: AlertTriangle,
       color: "from-pink-500 to-rose-500",
-      analysis: "Warning: Aesthetic density exceeds standard sensory processing limits.",
-      detail: "When she enters a room, lighting adjusts naturally to complement her aura. Photographers weep.",
+      analysis: "Warning: Aesthetic density exceeds standard sensory processing limits! 🚨✨",
+      detail: "When she enters a room, lighting adjusts naturally to complement her aura! 🌟 Photographers weep! 😭📸",
     },
     {
       id: "smile",
-      title: "Smile Quality",
+      title: "Smile Quality 😁❤️",
       category: "CHARM INDEX",
-      value: "100%",
-      status: "Dangerous / Lethal ✨",
+      value: "100% 💘✨",
+      status: "Dangerous / Lethal ✨💘",
       icon: Zap,
       color: "from-amber-400 to-orange-500",
-      analysis: "High risk of causing spontaneous infatuation and rapid heartbeat.",
-      detail: "Verified by 10/10 cardiologists: her smile is scientifically proven to cure bad days instantly.",
+      analysis: "High risk of causing spontaneous infatuation and rapid heartbeat! 💓😍",
+      detail: "Verified by 10/10 cardiologists: her smile is scientifically proven to cure bad days instantly! 🩺🥰",
     },
     {
       id: "food",
-      title: "Food Sharing",
+      title: "Food Sharing 🍟🔒",
       category: "GENEROSITY",
-      value: "0.01%",
-      status: "Rare Artifact 🔒",
+      value: "0.01% 🍕🔒",
+      status: "Rare Artifact 🔒🍰",
       icon: Lock,
       color: "from-purple-500 to-indigo-500",
-      analysis: "Access denied. What is on her plate belongs exclusively to her.",
-      detail: "Will happily share your fries, but her dessert is classified under maximum national security.",
+      analysis: "Access denied! What is on her plate belongs exclusively to her! 🚫🍰",
+      detail: "Will happily share your fries 🍟, but her dessert 🍰 is classified under maximum national security! 🚨",
     },
     {
       id: "fashion",
-      title: "Fashion Sense",
+      title: "Fashion Sense 👑👗",
       category: "STYLE QUOTIENT",
-      value: "Tier S+",
-      status: "Elite / Runway 👗",
+      value: "Tier S+ 🔥✨",
+      status: "Elite / Runway 👗✨",
       icon: Crown,
       color: "from-fuchsia-500 to-pink-500",
-      analysis: "Effortlessly transforms casual hoodies or traditional sarees into haute couture.",
-      detail: "Whether wearing traditional royal sarees or stealing oversize hoodies, she sets the standard.",
+      analysis: "Effortlessly transforms casual hoodies or traditional sarees into haute couture! ✨👠",
+      detail: "Whether wearing traditional royal sarees 🥻 or stealing oversize hoodies 🧥, she sets the standard! 🔥👑",
     },
     {
       id: "mood",
-      title: "Mood Detector",
+      title: "Mood Detector 🌈🌀",
       category: "ATMOSPHERE",
-      value: "Dynamic",
-      status: "Unpredictable 🌀",
+      value: "Dynamic 🌀🐣",
+      status: "Unpredictable 🌀🔥",
       icon: Activity,
       color: "from-blue-400 to-cyan-500",
-      analysis: "Ranges from sweet angel to chaotic energy within 4.2 seconds.",
-      detail: "Requires regular snacks, compliments, and attention to maintain optimal peaceful operations.",
+      analysis: "Ranges from sweet angel 😇 to chaotic energy 😈 within 4.2 seconds! ⚡",
+      detail: "Requires regular snacks 🍫, compliments 🥰, and attention 👀 to maintain optimal peaceful operations! 🕊️💖",
     },
     {
       id: "reply",
-      title: "Reply Speed",
+      title: "Reply Speed 📱⏳",
       category: "COMMUNICATION",
-      value: "Variable",
-      status: "Depends on Vibe ⏱️",
+      value: "Variable ⏱️💃",
+      status: "Depends on Vibe ⏱️💅",
       icon: MessageSquare,
       color: "from-emerald-400 to-teal-500",
-      analysis: "Can reply in 0.5 seconds or 3 business days depending on current energy levels.",
-      detail: "If she leaves you on read, she is simply giving you time to appreciate her previous message.",
+      analysis: "Can reply in 0.5 seconds ⚡ or 3 business days ⏳ depending on current energy levels! 💃",
+      detail: "If she leaves you on read 💬, she is simply giving you time to appreciate her previous message! 😘💅",
     },
   ];
 
@@ -95,14 +95,14 @@ export default function AiPersonality() {
         <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm">
           <Sparkles className="w-4 h-4 text-purple-600" />
           <span className="font-mono text-[11px] tracking-[0.3em] text-purple-700 uppercase font-bold">
-            SECTION 02 · BIOMETRIC SCAN
+            SECTION 02 · BIOMETRIC SCAN 🔬✨
           </span>
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight font-outfit text-[#2d0a14]">
-          AI Personality <span className="text-gradient-aura">Analysis</span>
+          AI Personality <span className="text-gradient-aura">Analysis</span> 🤖💖
         </h2>
         <p className="text-[#64283c] text-base md:text-lg font-light">
-          We fed 18 years of Anshi&apos;s behavioral data into a supercomputer. Click any biometric stat card below to decrypt her classified personality reports.
+          We fed 18 years of Anshi&apos;s behavioral data into a supercomputer! 🖥️✨ Click any biometric stat card below to decrypt her classified personality reports! 🔓💕
         </p>
       </div>
 
@@ -166,13 +166,13 @@ export default function AiPersonality() {
                 className="overflow-hidden border-t border-rose-200 pt-3 text-xs text-[#2d0a14] font-mono leading-relaxed bg-rose-50/50 p-2 rounded-xl mt-2"
               >
                 <div className="font-bold uppercase tracking-wider mb-1 text-rose-600">
-                  ⚡ DECRYPTED NOTE:
+                  ⚡ DECRYPTED NOTE 💖:
                 </div>
                 {stat.detail}
               </motion.div>
 
               <div className="mt-4 flex items-center justify-between text-[11px] font-mono text-[#64283c]/60 font-bold">
-                <span>CLICK TO {isSelected ? "COLLAPSE" : "DECRYPT"}</span>
+                <span>CLICK TO {isSelected ? "COLLAPSE 🙈" : "DECRYPT 🔓"}</span>
                 <span className="text-rose-500">#00{index + 1}</span>
               </div>
             </motion.div>

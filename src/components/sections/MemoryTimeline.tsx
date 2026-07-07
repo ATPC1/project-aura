@@ -18,48 +18,48 @@ export default function MemoryTimeline() {
   const events: TimelineEvent[] = [
     {
       year: "2006",
-      date: "MAY 15, 2006",
-      title: "The Universe Upgraded",
-      category: "ORIGIN STORY",
-      desc: "Anshi arrives on Earth. Global aesthetic standards and charm metrics immediately shift upward by 500%. The Main Character era officially begins.",
+      date: "MAY 15, 2006 👶🎉",
+      title: "The Universe Upgraded 🌌✨",
+      category: "ORIGIN STORY 👑",
+      desc: "Anshi arrives on Earth! 🌍✨ Global aesthetic standards and charm metrics immediately shift upward by 500%! 📈 The Main Character era officially begins! 👑🚀",
       icon: Crown,
-      highlight: "HISTORIC MILESTONE",
+      highlight: "HISTORIC MILESTONE 🏆",
     },
     {
       year: "ERA I",
-      date: "THE SAREE CORONATION",
-      title: "Royalty Confirmed",
-      category: "ROYAL ELEGANCE",
-      desc: "Stepping out in traditional royal sarees. Turning simple hallways and festive entrances into red carpet runway moments.",
+      date: "THE SAREE CORONATION 🥻✨",
+      title: "Royalty Confirmed 👑🔥",
+      category: "ROYAL ELEGANCE 👸",
+      desc: "Stepping out in traditional royal sarees! 🌟 Turning simple hallways and festive entrances into red carpet runway moments! 📸👠",
       icon: Star,
-      highlight: "100% REGAL AURA",
+      highlight: "100% REGAL AURA ✨",
     },
     {
       year: "ERA II",
-      date: "GOLDEN HOUR MAGIC",
-      title: "Sunlight Defeated",
-      category: "AESTHETIC SUPREMACY",
-      desc: "The sun realizing its evening golden hour rays cannot compete with her natural glow. Photographers and cameras celebrate.",
+      date: "GOLDEN HOUR MAGIC 🌅✨",
+      title: "Sunlight Defeated ☀️😎",
+      category: "AESTHETIC SUPREMACY 👑",
+      desc: "The sun realizing its evening golden hour rays cannot compete with her natural glow! 🌅✨ Photographers and cameras celebrate! 🎉📸",
       icon: Zap,
-      highlight: "UNSTOPPABLE GLOW",
+      highlight: "UNSTOPPABLE GLOW 🌟",
     },
     {
       year: "ERA III",
-      date: "BOUGAINVILLEA DIARIES",
-      title: "Blooming Louder Than Flowers",
-      category: "NATURAL CHARM",
-      desc: "Bringing vibrant color, warmth, and laughter into every room, garden, and conversation she touches.",
+      date: "BOUGAINVILLEA DIARIES 🌸💭",
+      title: "Blooming Louder Than Flowers 🌺💖",
+      category: "NATURAL CHARM 🌷",
+      desc: "Bringing vibrant color, warmth, and laughter into every room, garden, and conversation she touches! 🌷🥰",
       icon: Heart,
-      highlight: "PURE SEROTONIN",
+      highlight: "PURE SEROTONIN 🦋",
     },
     {
       year: "NOW",
-      date: "PRESENT DAY & BEYOND",
-      title: "Undefeated Main Character",
-      category: "ONGOING LEGACY",
-      desc: "Continuing her undefeated reign as the rarest, kindest, and most unforgettable vibe in existence. The story only gets better.",
+      date: "PRESENT DAY & BEYOND 🚀✨",
+      title: "Undefeated Main Character 👑🏆",
+      category: "ONGOING LEGACY 💫",
+      desc: "Continuing her undefeated reign as the rarest, kindest, and most unforgettable vibe in existence! 💫 The story only gets better! 💖📖",
       icon: Compass,
-      highlight: "INFINITE POTENTIAL",
+      highlight: "INFINITE POTENTIAL 🌟",
     },
   ];
 
@@ -70,14 +70,14 @@ export default function MemoryTimeline() {
         <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm">
           <Clock className="w-4 h-4 text-rose-600" />
           <span className="font-mono text-[11px] tracking-[0.3em] text-rose-600 uppercase font-bold">
-            SECTION 05 · CHRONOLOGICAL ARCHIVE
+            SECTION 05 · CHRONOLOGICAL ARCHIVE ⏳📚
           </span>
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight font-outfit text-[#2d0a14]">
-          The Memory <span className="text-gradient-aura">Timeline</span>
+          The Memory <span className="text-gradient-aura">Timeline</span> 🕰️✨
         </h2>
         <p className="text-[#64283c] text-base md:text-lg font-light">
-          From the legendary arrival on May 15, 2006 to present day royalty. Trace the key chapters that built the Anshi experience.
+          From the legendary arrival on May 15, 2006 to present day royalty! 👑 Trace the key chapters that built the Anshi experience! 📖💖
         </p>
       </div>
 
@@ -142,7 +142,7 @@ export default function MemoryTimeline() {
                       }`}
                     >
                       <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-                      <span>CHAPTER #{index + 1} · {event.category}</span>
+                      <span>CHAPTER #{index + 1} · {event.category} ✨</span>
                     </div>
                   </div>
                 </div>

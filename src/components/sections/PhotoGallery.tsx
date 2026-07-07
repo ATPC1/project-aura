@@ -28,62 +28,62 @@ export default function PhotoGallery() {
     {
       id: "photo-1",
       src: "/photos/photo-1.jpg",
-      title: "Every Frame, A Painting",
-      tag: "CLASSIC",
+      title: "Every Frame, A Painting 🎨✨",
+      tag: "CLASSIC 👑",
       num: "№01",
-      date: "THE YELLOW TOP ERA",
-      admiration: "She doesn't just catch the light; she commands it. Notice the effortless poise and natural confidence that turns a simple moment into an iconic masterpiece.",
-      quote: "Elegance is not about being noticed, it is about being remembered.",
+      date: "THE YELLOW TOP ERA 💛🌟",
+      admiration: "She doesn't just catch the light; she commands it! ✨ Notice the effortless poise and natural confidence that turns a simple moment into an iconic masterpiece! 🖼️💖",
+      quote: "Elegance is not about being noticed, it is about being remembered! 💫👑",
     },
     {
       id: "photo-2",
       src: "/photos/photo-2.png",
-      title: "Royalty. Confirmed.",
-      tag: "ROYALTY",
+      title: "Royalty. Confirmed. 👑🔥",
+      tag: "ROYALTY 👸",
       num: "№02",
-      date: "FESTIVE SEASONS",
-      admiration: "When she walks down a hallway in a traditional saree, the entire atmosphere shifts to match her majesty. A rare combination of grace and undeniable royalty.",
-      quote: "True royalty is carried in the soul and reflected in every step.",
+      date: "FESTIVE SEASONS 🥻✨",
+      admiration: "When she walks down a hallway in a traditional saree, the entire atmosphere shifts to match her majesty! 🌟 A rare combination of grace and undeniable royalty! 👸❤️",
+      quote: "True royalty is carried in the soul and reflected in every step! 🌟👸",
     },
     {
       id: "photo-3",
       src: "/photos/photo-3.jpg",
-      title: "Blooming Louder Than Flowers",
-      tag: "SERENE",
+      title: "Blooming Louder Than Flowers 🌺💖",
+      tag: "SERENE 🌸",
       num: "№03",
-      date: "SUNNY AFTERNOONS",
-      admiration: "Resting by the water in vibrant red. Even the surrounding bougainvillea blossoms seem to be leaning in to admire her warmth and serene beauty.",
-      quote: "Some people bring sunshine to the world simply by existing.",
+      date: "SUNNY AFTERNOONS ☀️🌸",
+      admiration: "Resting by the water in vibrant red! ❤️ Even the surrounding bougainvillea blossoms seem to be leaning in to admire her warmth and serene beauty! 🌸✨",
+      quote: "Some people bring sunshine to the world simply by existing! 🌞🥰",
     },
     {
       id: "photo-4",
       src: "/photos/photo-4.jpg",
-      title: "Bougainvillea Dreams",
-      tag: "NATURAL",
+      title: "Bougainvillea Dreams 🌸💭",
+      tag: "NATURAL 🌿",
       num: "№04",
-      date: "SPRING VIBES",
-      admiration: "Standing tall amidst nature's brightest colors. A candid snapshot that proves her natural aura is the main character in every landscape.",
-      quote: "Wherever she stands, that spot becomes the center of the universe.",
+      date: "SPRING VIBES 🌿💗",
+      admiration: "Standing tall amidst nature's brightest colors! 🌈 A candid snapshot that proves her natural aura is the main character in every landscape! 👑✨",
+      quote: "Wherever she stands, that spot becomes the center of the universe! 🌌✨",
     },
     {
       id: "photo-5",
       src: "/photos/photo-5.jpg",
-      title: "Lost In Thought, Found By Everyone",
-      tag: "CHARMING",
+      title: "Lost In Thought, Found By Everyone 🥰💭",
+      tag: "CHARMING 💫",
       num: "№05",
-      date: "BLUE SWEATER DAYS",
-      admiration: "Resting her chin with a gentle, knowing smile. A quiet moment of pure charm that captivates effortlessly without ever trying.",
-      quote: "The most powerful charm is the kind that feels entirely effortless.",
+      date: "BLUE SWEATER DAYS 💙🧥",
+      admiration: "Resting her chin with a gentle, knowing smile! 😊 A quiet moment of pure charm that captivates effortlessly without ever trying! 💫💖",
+      quote: "The most powerful charm is the kind that feels entirely effortless! 💫❤️",
     },
     {
       id: "photo-6",
       src: "/photos/photo-6.png",
-      title: "Golden Hour Is Just Her Time Zone",
-      tag: "ICONIC",
+      title: "Golden Hour Is Just Her Time Zone 🌅👑",
+      tag: "ICONIC 🔥",
       num: "№06",
-      date: "TIMELESS ELEGANCE",
-      admiration: "Whether looking directly at the camera or away, the spotlight naturally follows her. Her presence is mathematically and aesthetically undefeated.",
-      quote: "Golden hour was invented simply to give the sun a chance to compete with her.",
+      date: "TIMELESS ELEGANCE ⏳✨",
+      admiration: "Whether looking directly at the camera or away, the spotlight naturally follows her! ✨ Her presence is mathematically and aesthetically undefeated! 🔥👑",
+      quote: "Golden hour was invented simply to give the sun a chance to compete with her! ☀️😍",
     },
   ];
 
@@ -135,16 +135,16 @@ export default function PhotoGallery() {
         <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm">
           <Crown className="w-4 h-4 text-amber-500" />
           <span className="font-mono text-[11px] tracking-[0.3em] text-rose-600 uppercase font-bold">
-            SECTION 04 · 3D CYLINDRICAL BOUQUET
+            SECTION 04 · 3D CYLINDRICAL BOUQUET 🌸🎡
           </span>
         </div>
         <h2 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight font-outfit text-[#2d0a14]">
-          Anshi
+          Anshi <span className="inline-block animate-bounce">💖🌹</span>
         </h2>
         <p className="text-rose-700 text-lg md:text-xl font-medium italic max-w-xl mx-auto leading-relaxed">
-          A 3D bouquet of every one-of-one moment. <span className="underline decoration-rose-500 underline-offset-4 font-bold">Drag it.</span>
+          A 3D bouquet of every one-of-one moment! 💐✨ <span className="underline decoration-rose-500 underline-offset-4 font-bold">Drag it. 👆</span>
           <br />
-          <span className="text-[#64283c]">Spin it. Fall in.</span>
+          <span className="text-[#64283c]">Spin it. 🎡 Fall in! 🥰💘</span>
         </p>
       </div>
 
@@ -233,7 +233,7 @@ export default function PhotoGallery() {
           className="px-6 py-3 rounded-full bg-white/90 hover:bg-white border border-rose-300 text-[#2d0a14] font-mono text-xs tracking-widest transition flex items-center gap-2.5 shadow-md backdrop-blur-md font-bold"
         >
           {isAutoSpinning ? <Pause className="w-3.5 h-3.5 text-rose-600" /> : <Play className="w-3.5 h-3.5 text-emerald-600" />}
-          <span>{isAutoSpinning ? "PAUSE" : "PLAY"}</span>
+          <span>{isAutoSpinning ? "PAUSE ⏸️" : "PLAY ▶️"}</span>
         </button>
 
         <button
@@ -251,13 +251,13 @@ export default function PhotoGallery() {
         </button>
 
         <div className="px-8 py-3 rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 text-white font-mono text-xs tracking-[0.25em] font-extrabold shadow-md backdrop-blur-md">
-          DRAG TO SPIN
+          DRAG TO SPIN 👆🎡
         </div>
       </div>
 
       {/* Sub-navigation link */}
       <div className="text-center font-mono text-[11px] text-[#64283c]/70 tracking-[0.3em] uppercase font-bold mt-6">
-        SCROLL — PLAY THE PETAL GAME
+        SCROLL — PLAY THE PETAL GAME 🌸👇
       </div>
 
       {/* Fullscreen Admiration Modal */}
@@ -317,7 +317,7 @@ export default function PhotoGallery() {
                   {/* Deep Admiration Text */}
                   <div className="space-y-4">
                     <div className="font-mono text-[10px] tracking-widest text-rose-600 uppercase font-extrabold">
-                      ✨ AURA ANALYSIS & ADMIRATION:
+                      ✨ AURA ANALYSIS & ADMIRATION 💖:
                     </div>
                     <p className="text-[#2d0a14] font-light leading-relaxed text-base md:text-lg">
                       {selectedPhoto.admiration}
@@ -331,13 +331,13 @@ export default function PhotoGallery() {
                 <div className="pt-6 border-t border-rose-200 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-rose-600 font-mono text-xs font-bold">
                     <Heart className="w-4 h-4 fill-current" />
-                    <span>ROYALTY VERIFIED 1 OF 1</span>
+                    <span>ROYALTY VERIFIED 1 OF 1 👑💎</span>
                   </div>
                   <button
                     onClick={() => setSelectedPhoto(null)}
                     className="bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold px-6 py-2.5 rounded-full text-xs font-outfit uppercase hover:scale-105 transition shadow-lg shadow-rose-500/30"
                   >
-                    CLOSE ARCHIVE
+                    CLOSE ARCHIVE ❌
                   </button>
                 </div>
               </div>

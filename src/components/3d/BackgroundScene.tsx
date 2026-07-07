@@ -83,22 +83,22 @@ function FloatingSpheres() {
 
 function FallingPetals({ isMobile }: { isMobile: boolean }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
-  const count = isMobile ? 120 : 350; // Optimized petal count for mobile!
+  const count = isMobile ? 180 : 500; // Abundant petals across the whole screen!
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
   const petals = useMemo(() => {
     return Array.from({ length: count }, () => ({
-      x: (Math.random() - 0.5) * 35,
-      y: Math.random() * 30 - 10,
-      z: (Math.random() - 0.5) * 20,
-      speedY: 0.02 + Math.random() * 0.04,
-      speedX: (Math.random() - 0.5) * 0.02,
+      x: (Math.random() - 0.5) * 40,
+      y: Math.random() * 35 - 12,
+      z: (Math.random() - 0.5) * 25,
+      speedY: 0.025 + Math.random() * 0.045,
+      speedX: (Math.random() - 0.5) * 0.025,
       rotX: Math.random() * Math.PI,
       rotY: Math.random() * Math.PI,
       rotZ: Math.random() * Math.PI,
-      rotSpeedX: (Math.random() - 0.5) * 0.04,
-      rotSpeedY: (Math.random() - 0.5) * 0.04,
-      scale: 0.9 + Math.random() * 1.2,
+      rotSpeedX: (Math.random() - 0.5) * 0.05,
+      rotSpeedY: (Math.random() - 0.5) * 0.05,
+      scale: 1.0 + Math.random() * 1.4,
     }));
   }, [count]);
 
@@ -106,12 +106,12 @@ function FallingPetals({ isMobile }: { isMobile: boolean }) {
     if (!meshRef.current) return;
     petals.forEach((petal, i) => {
       petal.y -= petal.speedY;
-      petal.x += petal.speedX + Math.sin(state.clock.elapsedTime * 0.5 + i) * 0.015;
+      petal.x += petal.speedX + Math.sin(state.clock.elapsedTime * 0.5 + i) * 0.02;
       
       // Reset to top when falling below screen
       if (petal.y < -15) {
-        petal.y = 15;
-        petal.x = (Math.random() - 0.5) * 35;
+        petal.y = 18;
+        petal.x = (Math.random() - 0.5) * 40;
       }
       petal.rotX += petal.rotSpeedX;
       petal.rotY += petal.rotSpeedY;
@@ -127,11 +127,11 @@ function FallingPetals({ isMobile }: { isMobile: boolean }) {
 
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
-      <circleGeometry args={[0.28, 6]} />
+      <circleGeometry args={[0.32, 6]} />
       <meshStandardMaterial
         color="#e11d48"
-        roughness={0.2}
-        metalness={0.2}
+        roughness={0.15}
+        metalness={0.25}
         side={THREE.DoubleSide}
         transparent
         opacity={0.95}

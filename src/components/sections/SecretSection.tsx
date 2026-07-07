@@ -40,105 +40,92 @@ export default function SecretSection() {
   };
 
   return (
-    <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto relative z-10 text-center">
-      {/* Secret Card Trigger */}
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        onClick={triggerUnlock}
-        className="glass-card p-10 md:p-14 rounded-3xl border border-rose-300 shadow-xl cursor-pointer relative overflow-hidden group select-none bg-white/90"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-rose-400/10 via-pink-300/10 to-amber-300/10 opacity-0 group-hover:opacity-100 transition duration-500" />
+    <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto text-center relative z-10 select-none">
+      <div className="glass-card p-12 rounded-3xl border border-rose-300 shadow-xl space-y-8 relative overflow-hidden bg-white/90">
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400" />
 
-        <div className="inline-flex p-4 rounded-full bg-rose-100 border border-rose-300 text-rose-600 mb-6 group-hover:scale-110 transition duration-300 shadow-md">
-          <Lock className="w-8 h-8" />
+        <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm">
+          <Key className="w-4 h-4 text-rose-600 animate-pulse" />
+          <span className="font-mono text-[11px] tracking-[0.3em] text-rose-600 uppercase font-bold">
+            CLASSIFIED FILE · SECURITY LEVEL 10 🔒🔐
+          </span>
         </div>
 
-        <div className="font-mono text-xs tracking-[0.3em] text-rose-600 uppercase mb-2 font-bold">
-          CLASSIFIED FILE · SECURITY LEVEL 10
-        </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-outfit text-[#2d0a14] mb-4">
-          The <span className="text-gradient-aura">Konami Vault</span>
+        <h2 className="text-4xl sm:text-5xl font-black tracking-tight font-outfit text-[#2d0a14]">
+          The <span className="text-gradient-aura">Konami Vault</span> 🗝️✨
         </h2>
-        <p className="text-[#64283c] font-light max-w-lg mx-auto text-sm md:text-base mb-8">
-          A protected memory vault encrypted exclusively for Anshi. Click the security lock above or enter the classic Konami code <span className="font-mono text-amber-600 font-bold">↑ ↑ ↓ ↓ ← → ← → B A</span> on your keyboard to bypass authentication.
+
+        <p className="text-[#64283c] text-base md:text-lg font-light max-w-xl mx-auto leading-relaxed">
+          A protected memory vault encrypted exclusively for Anshi! 💌🔒 Click the security lock above or enter the classic Konami code <span className="font-mono text-amber-600 font-bold">↑ ↑ ↓ ↓ ← → ← → B A 🎮</span> on your keyboard to bypass authentication! 🚀
         </p>
 
-        <div className="inline-flex items-center gap-2 glass-panel px-6 py-3 rounded-full text-xs font-mono tracking-widest text-[#2d0a14] group-hover:bg-rose-100 transition border border-rose-300 font-bold shadow-sm">
-          <Key className="w-4 h-4 text-amber-500 animate-pulse" />
-          <span>TAP TO BYPASS SECURITY PROTOCOL</span>
+        {/* Lock Icon Interactive Trigger */}
+        <div className="pt-4 flex justify-center">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={triggerUnlock}
+            className="group relative px-8 py-5 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-600 text-white font-mono text-xs tracking-widest uppercase font-extrabold shadow-lg shadow-rose-500/30 flex items-center gap-3"
+          >
+            <Lock className="w-4 h-4 group-hover:hidden" />
+            <Unlock className="w-4 h-4 hidden group-hover:block" />
+            <span>TAP TO BYPASS SECURITY PROTOCOL 🔓⚡</span>
+          </motion.button>
         </div>
-      </motion.div>
+      </div>
 
-      {/* Fullscreen Secret Letter Takeover */}
+      {/* Secret Modal */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#fff5f7]/95 backdrop-blur-2xl flex items-center justify-center p-4 md:p-10 select-none overflow-y-auto"
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 z-50 bg-[#fff5f7]/95 backdrop-blur-xl flex items-center justify-center p-6 select-none overflow-y-auto"
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0, y: 30 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 30 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="max-w-2xl w-full glass-card rounded-3xl p-8 md:p-12 border border-rose-400 shadow-[0_20px_80px_rgba(244,114,182,0.3)] relative text-left bg-white/95 my-auto"
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-2xl w-full glass-panel rounded-3xl p-8 md:p-12 border border-rose-400 shadow-2xl text-left space-y-6 relative overflow-hidden bg-white/95 my-auto"
             >
-              {/* Close Button */}
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-[#2d0a14] hover:bg-rose-200 transition font-bold"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              <div className="flex items-center justify-between border-b border-rose-200 pb-4 font-mono text-xs text-rose-600 font-bold">
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                  AUTHENTICATION SUCCESSFUL ✅🔓
+                </span>
+                <span>Personal Dispatch #001 💌✨</span>
+              </div>
 
-              {/* Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 text-white shadow-md">
-                  <Unlock className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="font-mono text-[10px] tracking-widest text-emerald-600 uppercase font-bold">
-                    AUTHENTICATION SUCCESSFUL
-                  </div>
-                  <h3 className="text-2xl font-bold font-outfit text-[#2d0a14]">
-                    Personal Dispatch #001
-                  </h3>
+              <div className="space-y-4 font-serif text-[#2d0a14] leading-relaxed">
+                <h3 className="text-2xl font-bold italic">
+                  To the One and Only Anshi, 👑💖
+                </h3>
+                <p className="font-light">
+                  We built this digital experience because standard gifts or typical web pages could never do justice to your energy! ✨ You bring effortless grace, contagious laughter, and undeniable royalty into every room you enter! 🌸🥰
+                </p>
+                <p className="font-light">
+                  Whether wearing sarees with regal majesty 🥻 or stealing hoodies without a trace 🧥😉, your aesthetic sets a standard that nobody else can replicate! 🔥👑
+                </p>
+                <p className="font-light">
+                  Never change, never settle, and always keep shining as the undisputed, undefeated main character of the universe! 🌌✨💫
+                </p>
+                <div className="pt-4 font-outfit font-bold tracking-wide text-rose-600">
+                  — Built with unconditional love & infinite respect. ❤️💌
                 </div>
               </div>
 
-              {/* Letter Content */}
-              <div className="space-y-6 text-[#64283c] font-light leading-relaxed text-base md:text-lg border-y border-rose-200 py-8 my-6">
-                <p className="font-outfit text-xl font-bold text-[#2d0a14] italic">
-                  &ldquo;To the One and Only Anshi,&rdquo;
-                </p>
-                <p>
-                  We built this digital experience because standard gifts or typical web pages could never do justice to your energy. You bring effortless grace, contagious laughter, and undeniable royalty into every room you enter.
-                </p>
-                <p>
-                  Whether wearing sarees with regal majesty or stealing hoodies without a trace, your aesthetic sets a standard that nobody else can replicate.
-                </p>
-                <p>
-                  Never change, never settle, and always keep shining as the undisputed, undefeated main character of the universe.
-                </p>
-                <p className="font-mono text-sm text-rose-600 pt-2 font-bold">
-                  — Built with unconditional love & infinite respect.
-                </p>
-              </div>
-
-              {/* Footer */}
-              <div className="flex items-center justify-between pt-2">
-                <div className="flex items-center gap-2 text-rose-600 font-mono text-xs font-bold">
-                  <Heart className="w-4 h-4 fill-current" />
-                  <span>PERMANENTLY ARCHIVED IN AURA OS</span>
-                </div>
+              <div className="pt-6 border-t border-rose-200 flex justify-between items-center">
+                <span className="font-mono text-[10px] text-[#64283c]/60 font-bold">
+                  PERMANENTLY ARCHIVED IN AURA OS 💎🔒
+                </span>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold px-6 py-2.5 rounded-full text-xs font-outfit tracking-wider uppercase hover:scale-105 transition shadow-lg shadow-rose-500/30"
+                  className="bg-rose-100 hover:bg-rose-200 text-[#2d0a14] px-6 py-2 rounded-full font-mono text-xs transition font-bold"
                 >
-                  LOCK VAULT
+                  LOCK VAULT 🔐
                 </button>
               </div>
             </motion.div>

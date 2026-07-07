@@ -28,50 +28,50 @@ export default function Achievements() {
   const achievementsList: Achievement[] = [
     {
       id: "hoodie",
-      title: "Professional Hoodie Thief",
-      subtitle: "STEAL RATE: 99.8%",
-      desc: "Successfully requisitioned every comfortable oversize hoodie in a 10-mile radius without remorse.",
-      rarity: "LEGENDARY",
+      title: "Professional Hoodie Thief 🧥🔥",
+      subtitle: "STEAL RATE: 99.8% 😎👌",
+      desc: "Successfully requisitioned every comfortable oversize hoodie in a 10-mile radius without remorse! 🧥💨",
+      rarity: "LEGENDARY 👑",
       points: 500,
       icon: Flame,
       unlockedByDefault: true,
     },
     {
       id: "brighter",
-      title: "Makes Every Room Brighter",
-      subtitle: "AURA OUTPUT: 10,000 LUMENS",
-      desc: "Instantaneous illumination upon entry. Electricity companies hate this one simple trick.",
-      rarity: "MYTHIC",
+      title: "Makes Every Room Brighter ☀️✨",
+      subtitle: "AURA OUTPUT: 10,000 LUMENS 💡🌟",
+      desc: "Instantaneous illumination upon entry! 🌞 Electricity companies hate this one simple trick! ⚡😂",
+      rarity: "MYTHIC ✨",
       points: 750,
       icon: Sparkles,
       unlockedByDefault: true,
     },
     {
       id: "booster",
-      title: "Certified Mood Booster",
-      subtitle: "SEROTONIN SPIKE: +400%",
-      desc: "Scientifically verified ability to turn chaotic stress into peaceful happiness within seconds.",
-      rarity: "EPIC",
+      title: "Certified Mood Booster 🦋💖",
+      subtitle: "SEROTONIN SPIKE: +400% 📈🥰",
+      desc: "Scientifically verified ability to turn chaotic stress into peaceful happiness within seconds! 🕊️❤️",
+      rarity: "EPIC 🌟",
       points: 600,
       icon: Heart,
       unlockedByDefault: true,
     },
     {
       id: "pretty",
-      title: "Too Pretty To Process",
-      subtitle: "GPU OVERLOAD WARNING",
-      desc: "Caused visual rendering units and human brains to temporarily stall due to extreme aesthetic detail.",
-      rarity: "GOD TIER",
+      title: "Too Pretty To Process 🥺💘",
+      subtitle: "GPU OVERLOAD WARNING ⚠️🔥",
+      desc: "Caused visual rendering units and human brains to temporarily stall due to extreme aesthetic detail! 🤯💖",
+      rarity: "GOD TIER 👑",
       points: 999,
       icon: ShieldAlert,
       unlockedByDefault: true,
     },
     {
       id: "favorite",
-      title: "Favorite Human in the Universe",
-      subtitle: "100% COMPLETION BADGE",
-      desc: "The ultimate one-of-a-kind trophy. Tap to permanently claim your rightful title.",
-      rarity: "ONE OF ONE ★",
+      title: "Favorite Human in the Universe 🌌👑",
+      subtitle: "100% COMPLETION BADGE 🏆💎",
+      desc: "The ultimate one-of-a-kind trophy! 🏆 Tap to permanently claim your rightful title! 💕✨",
+      rarity: "ONE OF ONE ★💎",
       points: 5000,
       icon: Trophy,
       unlockedByDefault: false,
@@ -109,14 +109,14 @@ export default function Achievements() {
           <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-amber-400 shadow-sm">
             <Trophy className="w-4 h-4 text-amber-500" />
             <span className="font-mono text-[11px] tracking-[0.3em] text-amber-700 uppercase font-bold">
-              SECTION 03 · GAMER PROFILE
+              SECTION 03 · GAMER PROFILE 🎮🏆
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight font-outfit text-[#2d0a14]">
-            Unlocked <span className="text-gradient-gold">Achievements</span>
+            Unlocked <span className="text-gradient-gold">Achievements</span> 🏆✨
           </h2>
           <p className="text-[#64283c] text-base md:text-lg font-light max-w-xl">
-            Anshi&apos;s lifelong trophy case. Tap any locked mythic achievement badge to claim your reward and trigger visual celebrations.
+            Anshi&apos;s lifelong trophy case! 🏅💖 Tap any locked mythic achievement badge to claim your reward and trigger visual celebrations! 🎉🥳
           </p>
         </div>
 
@@ -127,14 +127,14 @@ export default function Achievements() {
           </div>
           <div>
             <div className="font-mono text-xs text-[#64283c]/70 tracking-widest uppercase font-bold">
-              TOTAL AURA SCORE
+              TOTAL AURA SCORE 🌟💎
             </div>
             <div className="text-4xl font-black font-mono text-gradient-gold">
-              {totalPoints.toLocaleString()} <span className="text-sm font-normal text-[#64283c]">PTS</span>
+              {totalPoints.toLocaleString()} <span className="text-sm font-normal text-[#64283c]">PTS 🔥</span>
             </div>
             <div className="font-mono text-[10px] text-emerald-600 mt-1 flex items-center gap-1 font-bold">
               <CheckCircle2 className="w-3 h-3" />
-              {Object.values(unlocked).filter(Boolean).length} / {achievementsList.length} UNLOCKED
+              {Object.values(unlocked).filter(Boolean).length} / {achievementsList.length} UNLOCKED 🔓🎉
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function Achievements() {
                   {ach.rarity}
                 </span>
                 <span className="font-mono text-xs font-extrabold text-rose-600">
-                  +{ach.points} PTS
+                  +{ach.points} PTS ✨
                 </span>
               </div>
 
@@ -206,12 +206,12 @@ export default function Achievements() {
                 {isUnlocked ? (
                   <span className="text-emerald-600 flex items-center gap-1.5 font-bold">
                     <CheckCircle2 className="w-4 h-4" />
-                    ACHIEVEMENT UNLOCKED
+                    ACHIEVEMENT UNLOCKED 🎉💖
                   </span>
                 ) : (
                   <span className="text-amber-600 animate-pulse flex items-center gap-1.5 font-bold">
                     <Sparkles className="w-4 h-4" />
-                    TAP TO UNLOCK NOW
+                    TAP TO UNLOCK NOW ✨🔓
                   </span>
                 )}
                 <span className="text-[#64283c]/60 font-bold">#00{index + 1}</span>

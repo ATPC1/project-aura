@@ -36,54 +36,59 @@ export default function HeroSection() {
 
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center z-10">
         {/* Left Typography Column */}
-        <div className="lg:col-span-5 space-y-6 text-center lg:text-left z-20">
+        <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-8 z-10 w-full">
+          {/* Top Pill Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-md"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-rose-300 shadow-sm"
           >
-            <Crown className="w-4 h-4 text-amber-500 animate-bounce" />
-            <span className="font-mono text-xs tracking-[0.3em] text-rose-600 uppercase font-extrabold">
-              THE MAIN CHARACTER · DOB 15.05.2006
+            <Sparkles className="w-4 h-4 text-rose-500 animate-pulse shrink-0" />
+            <span className="font-mono text-xs tracking-[0.2em] text-rose-600 font-bold">
+              THE MAIN CHARACTER · DOB 15.05.2006 👑✨
             </span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight font-outfit text-[#2d0a14] leading-[0.9]"
-          >
-            Anshi
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-2xl text-[#64283c] font-light max-w-xl mx-auto lg:mx-0 leading-relaxed"
-          >
-            A cinematic celebration of effortless beauty, contagious laughter, and undeniable royalty. Because standard web pages could never do justice to your aura.
-          </motion.p>
-
+          {/* Main Title */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4"
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight font-outfit text-[#2d0a14] leading-[0.95]">
+              Anshi <span className="inline-block animate-bounce">💕✨</span>
+            </h1>
+          </motion.div>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg sm:text-xl md:text-2xl text-[#64283c] font-light max-w-xl leading-relaxed"
+          >
+            A cinematic celebration of effortless beauty, contagious laughter, and undeniable royalty! ✨🥰 Because standard web pages could never do justice to your aura! 🌸🔥
+          </motion.p>
+
+          {/* Action Button & Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center gap-4 pt-2 w-full sm:w-auto"
           >
             <button
               onClick={scrollToNext}
-              className="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 text-white font-extrabold px-8 py-4 rounded-full font-outfit text-sm uppercase tracking-wider hover:scale-105 transition shadow-[0_10px_30px_rgba(244,114,182,0.4)] flex items-center gap-2"
+              className="w-full sm:w-auto bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 text-white font-extrabold px-8 py-4 sm:px-10 sm:py-5 rounded-full font-outfit text-base sm:text-lg uppercase tracking-wider hover:scale-105 active:scale-95 transition shadow-lg shadow-rose-500/30 flex items-center justify-center gap-3 shrink-0"
             >
-              <span>Explore Her Universe</span>
-              <ArrowDown className="w-4 h-4 animate-bounce" />
+              <span>Explore Her Universe 🚀💕</span>
+              <ArrowDown className="w-5 h-5 animate-bounce" />
             </button>
 
-            <div className="glass-panel px-6 py-4 rounded-full text-xs font-mono tracking-widest text-rose-600 font-bold border border-rose-300 flex items-center gap-2">
-              <Star className="w-4 h-4 text-amber-500 fill-current" />
-              <span>1 OF 1 LIMITED EDITION</span>
+            <div className="flex items-center gap-2 px-6 py-4 rounded-full glass-panel border border-rose-300 text-rose-800 font-mono text-xs uppercase tracking-widest font-bold">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+              <span>1 OF 1 LIMITED EDITION 💎🌟</span>
             </div>
           </motion.div>
         </div>
@@ -119,11 +124,11 @@ export default function HeroSection() {
             {/* Clean Glass Caption Bar at bottom (Does NOT blur or merge the photo!) */}
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#2d0a14]/90 via-[#2d0a14]/60 to-transparent text-center z-20 pointer-events-none">
               <span className="font-serif italic text-2xl md:text-3xl font-bold text-white tracking-wide drop-shadow-md">
-                Effortless Royalty
+                Effortless Royalty 👑✨
               </span>
               <div className="flex items-center justify-center gap-1.5 text-rose-300 font-mono text-[10px] tracking-widest uppercase font-extrabold mt-1">
                 <Heart className="w-3 h-3 fill-current text-rose-400" />
-                <span>SHONA • THE ONE & ONLY</span>
+                <span>SHONA • THE ONE & ONLY 💕❤️🥰</span>
                 <Heart className="w-3 h-3 fill-current text-rose-400" />
               </div>
             </div>

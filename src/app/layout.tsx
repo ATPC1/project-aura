@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="antialiased bg-[#070709] text-white min-h-screen relative font-sans">
+    <html lang="en">
+      <body className="antialiased bg-[#fff5f7] text-[#2d0a14] min-h-screen relative font-sans">
         <SmoothScrollProvider>
           <BackgroundScene />
           <div className="relative z-10">{children}</div>

@@ -319,14 +319,14 @@ export default function AuraDefenderGame() {
         <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm">
           <Gamepad2 className="w-4 h-4 text-rose-600" />
           <span className="font-mono text-[11px] tracking-[0.3em] text-rose-600 uppercase font-bold">
-            SECTION 06 · THE FLOWER ZOMBIE GAME
+            SECTION 06 · THE FLOWER ZOMBIE GAME 🎮🌸
           </span>
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight font-outfit text-[#2d0a14]">
-          Shona&apos;s <span className="text-gradient-aura">Laser Defense</span>
+          Shona&apos;s <span className="text-gradient-aura">Laser Defense</span> 🔫👾
         </h2>
         <p className="text-[#64283c] text-base md:text-lg font-light">
-          Help our girl avatar standing in the corner! Point your mouse at the 4 stationary flower zombies and Click & Hold to fire a continuous laser line. Destroy all 4 to unlock her special romantic message!
+          Help our girl avatar standing in the corner! 👧🏻✨ Point your mouse at the 4 stationary flower zombies 🧟‍♂️🌸 and Click & Hold to fire a continuous laser line! 🔥 Destroy all 4 to unlock her special romantic message! 💌💕
         </p>
       </div>
 
@@ -335,14 +335,14 @@ export default function AuraDefenderGame() {
         {/* Top Game Bar */}
         <div className="flex items-center justify-between mb-4 pb-4 border-b border-rose-200 font-mono text-xs">
           <div className="flex items-center gap-4">
-            <span className="text-[#64283c]/80 font-bold">AVATAR: <strong className="text-rose-600">QUEEN SHONA 💕</strong></span>
+            <span className="text-[#64283c]/80 font-bold">AVATAR: <strong className="text-rose-600">QUEEN SHONA 💕👑</strong></span>
             <span className="text-emerald-600 flex items-center gap-1 font-bold">
               <ShieldCheck className="w-4 h-4" />
-              WEAPON: CONTINUOUS LOVE LASER
+              WEAPON: CONTINUOUS LOVE LASER 🔫💖
             </span>
           </div>
           <div className="flex items-center gap-6">
-            <span className="text-amber-600 font-extrabold">FLOWER ZOMBIES LEFT: {zombiesLeft} / 4</span>
+            <span className="text-amber-600 font-extrabold">FLOWER ZOMBIES LEFT: {zombiesLeft} / 4 👾</span>
           </div>
         </div>
 
@@ -370,17 +370,17 @@ export default function AuraDefenderGame() {
               </div>
               <div className="space-y-1 sm:space-y-2 max-w-md">
                 <h3 className="text-2xl sm:text-3xl font-black font-outfit text-[#2d0a14] tracking-tight">
-                  Zap the 4 Flower Zombies!
+                  Zap the 4 Flower Zombies! ⚡👾
                 </h3>
                 <p className="text-[#64283c] font-light text-xs sm:text-sm leading-relaxed">
-                  Our girl avatar standing in the corner is ready! Hold down your mouse or touch screen to fire a continuous laser line and eliminate the 4 static flower zombies!
+                  Our girl avatar standing in the corner is ready! 👧🏻✨ Hold down your mouse or touch screen to fire a continuous laser line and eliminate the 4 static flower zombies! 💥🎯
                 </p>
               </div>
               <button
                 onClick={initGame}
                 className="w-full sm:w-auto bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 text-white font-extrabold px-8 py-4 sm:px-12 sm:py-5 rounded-full font-outfit text-base sm:text-lg uppercase tracking-wider hover:scale-105 active:scale-95 transition shadow-lg shadow-rose-500/30 shrink-0 mt-2 flex items-center justify-center gap-2 animate-pulse border border-white/50"
               >
-                <span>Start Flower Game</span>
+                <span>Start Flower Game 🚀🌸</span>
               </button>
             </div>
           )}
@@ -401,15 +401,15 @@ export default function AuraDefenderGame() {
 
                   <div>
                     <div className="font-mono text-xs tracking-[0.3em] text-emerald-600 font-bold mb-1 uppercase">
-                      🎉 ALL 4 ZOMBIES ELIMINATED
+                      🎉 ALL 4 ZOMBIES ELIMINATED 💥✨
                     </div>
                     <h3 className="text-3xl sm:text-4xl font-black font-outfit text-[#2d0a14] tracking-tight">
-                      YOU WIN!
+                      YOU WIN! 🏆🥳
                     </h3>
                   </div>
 
                   <p className="text-[#64283c] font-light text-sm leading-relaxed border-y border-rose-200 py-3">
-                    Queen Shona defended her peace! All 4 static flower zombies were eliminated by her Serotonin Laser! Choose an option below:
+                    Queen Shona defended her peace! 👑✨ All 4 static flower zombies were eliminated by her Serotonin Laser! Choose an option below: 👇😊
                   </p>
 
                   {/* THREE DISTINCT POST-VICTORY OPTIONS! */}
@@ -432,7 +432,7 @@ export default function AuraDefenderGame() {
                         className="bg-rose-100 hover:bg-rose-200 border border-rose-300 text-[#2d0a14] font-bold py-3 px-4 rounded-xl font-outfit text-sm flex items-center justify-center gap-2 transition shadow-md"
                       >
                         <RefreshCw className="w-4 h-4 text-emerald-600" />
-                        <span>Play Again</span>
+                        <span>Play Again 🔄</span>
                       </button>
 
                       <button
@@ -440,13 +440,13 @@ export default function AuraDefenderGame() {
                         className="bg-rose-100 hover:bg-rose-200 border border-rose-300 text-[#2d0a14] font-bold py-3 px-4 rounded-xl font-outfit text-sm flex items-center justify-center gap-2 transition shadow-md"
                       >
                         <X className="w-4 h-4 text-rose-600" />
-                        <span>Close Game</span>
+                        <span>Close Game ❌</span>
                       </button>
                     </div>
                   </div>
 
                   <div className="font-mono text-[10px] text-[#64283c]/60 tracking-widest uppercase font-bold">
-                    SELECTING SPECIAL MESSAGE RETURNS TO TOP HERO PAGE
+                    SELECTING SPECIAL MESSAGE RETURNS TO TOP HERO PAGE 🔝✨
                   </div>
                 </div>
               </motion.div>
@@ -457,9 +457,9 @@ export default function AuraDefenderGame() {
         {/* Footer Instructions */}
         <div className="mt-4 flex flex-wrap items-center justify-between font-mono text-[11px] text-[#64283c]/70 pt-2 border-t border-rose-200 font-bold">
           <div className="flex items-center gap-4">
-            <span>🖱️ POINT MOUSE & CLICK/HOLD TO FIRE CONTINUOUS LASER LINE</span>
+            <span>🖱️ POINT MOUSE & CLICK/HOLD TO FIRE CONTINUOUS LASER LINE 🔫🔥</span>
           </div>
-          <span className="text-rose-600 font-extrabold">TARGET: ZAP ALL 4 FLOWER ZOMBIES FOR SHONA&apos;S LOVE MESSAGE</span>
+          <span className="text-rose-600 font-extrabold">TARGET: ZAP ALL 4 FLOWER ZOMBIES FOR SHONA&apos;S LOVE MESSAGE 💌💕</span>
         </div>
       </div>
     </section>

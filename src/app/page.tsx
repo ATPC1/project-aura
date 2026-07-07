@@ -16,7 +16,7 @@ export default function Home() {
   const [isBooting, setIsBooting] = useState(true);
 
   return (
-    <main className="min-h-screen relative overflow-hidden selection:bg-rose-400 selection:text-white bg-[#fff5f7] text-[#2d0a14]">
+    <main className="min-h-screen relative overflow-hidden selection:bg-rose-400 selection:text-white bg-transparent text-[#2d0a14]">
       <AnimatePresence mode="wait">
         {isBooting && <CinematicIntro onComplete={() => setIsBooting(false)} />}
       </AnimatePresence>

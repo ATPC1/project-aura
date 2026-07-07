@@ -10,78 +10,75 @@ export default function PremiumEnding() {
   };
 
   return (
-    <footer className="relative pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto z-10 text-center overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-rose-400/30 via-pink-300/20 to-amber-300/20 rounded-full blur-[140px] pointer-events-none" />
-
-      {/* Main Closing Statement */}
-      <div className="space-y-6 max-w-4xl mx-auto mb-24">
+    <footer className="py-24 px-6 md:px-12 border-t border-rose-200 relative z-10 overflow-hidden text-center select-none bg-white/40">
+      <div className="max-w-4xl mx-auto space-y-12">
+        {/* Top Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm"
         >
-          <Crown className="w-4 h-4 text-amber-500" />
+          <Sparkles className="w-4 h-4 text-rose-600 animate-pulse" />
           <span className="font-mono text-[11px] tracking-[0.3em] text-rose-600 uppercase font-bold">
-            THE FINAL CHAPTER
+            THE FINAL CHAPTER 👑📖
           </span>
         </motion.div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight font-outfit text-[#2d0a14] leading-tight"
-        >
-          There is only <span className="text-gradient-aura italic font-normal">one.</span>
-        </motion.h2>
+        {/* Big Closing Statement */}
+        <div className="space-y-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight font-outfit text-[#2d0a14]"
+          >
+            There is only <span className="text-gradient-aura italic font-normal">one.</span> 👑💖✨
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-2xl text-[#64283c] font-light max-w-2xl mx-auto leading-relaxed"
+          >
+            An award-winning interactive digital tribute! 🏆✨ Built to celebrate 18 years of Anshi bringing effortless charm and unmatched elegance to the universe! 🌸🥰
+          </motion.p>
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-[#64283c] text-lg md:text-xl font-light max-w-2xl mx-auto"
-        >
-          An award-winning interactive digital tribute. Built to celebrate 18 years of Anshi bringing effortless charm and unmatched elegance to the universe.
-        </motion.p>
-
+        {/* Interactive Return to Top Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="pt-8"
+          className="pt-6"
         >
           <button
             onClick={scrollToTop}
-            className="glass-panel px-8 py-4 rounded-full text-xs font-mono tracking-widest uppercase hover:bg-white transition border border-rose-300 inline-flex items-center gap-2 text-[#2d0a14] font-bold group shadow-md bg-white/90"
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#2d0a14] text-white font-outfit text-sm uppercase tracking-widest hover:bg-rose-600 transition shadow-xl"
           >
-            <span>Return to Top</span>
-            <ArrowUp className="w-4 h-4 text-rose-500 group-hover:-translate-y-1 transition-transform" />
+            <span>Return to Top 🔝🚀</span>
+            <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
           </button>
         </motion.div>
-      </div>
 
-      {/* Minimalist Awwwards-Style Credits */}
-      <div className="border-t border-rose-200 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-[#64283c]/70 font-bold">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-rose-500 animate-pulse" />
-          <span>PROJECT AURA — THE MAIN CHARACTER EXPERIENCE</span>
-        </div>
+        {/* Minimalist Credits Footer */}
+        <div className="pt-16 border-t border-rose-200 flex flex-col sm:flex-row items-center justify-between gap-6 font-mono text-xs text-[#64283c]/70 font-bold">
+          <div className="flex items-center gap-2">
+            <Heart className="w-4 h-4 text-rose-500 fill-current" />
+            <span>PROJECT AURA — THE MAIN CHARACTER EXPERIENCE 👑✨</span>
+          </div>
 
-        <div className="flex items-center gap-6">
-          <span>DOB • 15 MAY 2006</span>
-          <span>•</span>
-          <span className="text-[#64283c]">DESIGNED EXCLUSIVELY FOR ANSHI</span>
-        </div>
+          <div className="flex items-center gap-6">
+            <span>DOB • 15 MAY 2006 🎂🎉</span>
+            <span>DESIGNED EXCLUSIVELY FOR ANSHI 💖</span>
+          </div>
 
-        <div className="flex items-center gap-1 text-rose-600 font-extrabold">
-          <span>BUILT WITH</span>
-          <Heart className="w-3.5 h-3.5 fill-current" />
-          <span>& INFINITE AURA</span>
+          <div className="text-rose-600 font-extrabold">
+            BUILT WITH ❤️ & INFINITE AURA ✨
+          </div>
         </div>
       </div>
     </footer>
