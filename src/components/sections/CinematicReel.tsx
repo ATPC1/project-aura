@@ -85,20 +85,34 @@ export default function CinematicReel() {
           </motion.p>
         </div>
 
-        {/* Video Player Container */}
+        {/* Mobile Phone Screen Frame Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden border-4 border-white shadow-[0_25px_70px_rgba(225,29,72,0.25)] group bg-black/90 aspect-video flex items-center justify-center cursor-pointer"
+          className="relative max-w-[340px] sm:max-w-[380px] md:max-w-[420px] aspect-[9/16] mx-auto rounded-[48px] sm:rounded-[56px] overflow-hidden border-[10px] sm:border-[14px] border-[#2d0a14] shadow-[0_30px_90px_rgba(225,29,72,0.35)] group bg-black flex items-center justify-center cursor-pointer"
           onClick={togglePlay}
         >
-          {/* Video Element */}
+          {/* Top Smartphone Notch / Dynamic Island */}
+          <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-[#2d0a14] rounded-full z-30 flex items-center justify-center pointer-events-none shadow-md">
+            <div className="w-3 h-3 rounded-full bg-black/80 mr-2" />
+            <div className="w-10 h-1.5 rounded-full bg-black/60" />
+          </div>
+
+          {/* Ambient Blurred Background Video (Prevents black bars while ensuring 100% of video is visible) */}
+          <video
+            src="/anshi.mp4"
+            className="absolute inset-0 w-full h-full object-cover blur-xl opacity-60 scale-110 pointer-events-none"
+            loop
+            playsInline
+          />
+
+          {/* Main Foreground Video (object-contain guarantees her head is NEVER cut off!) */}
           <video
             ref={videoRef}
             src="/anshi.mp4"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain relative z-10"
             loop
             playsInline
             onPlay={() => setIsPlaying(true)}
@@ -107,51 +121,51 @@ export default function CinematicReel() {
 
           {/* Overlay Glow when Paused */}
           {!isPlaying && (
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2d0a14]/80 via-black/40 to-transparent flex flex-col items-center justify-center transition-opacity duration-300">
+            <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#2d0a14]/80 via-black/40 to-transparent flex flex-col items-center justify-center transition-opacity duration-300 p-4">
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-24 h-24 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white flex items-center justify-center shadow-[0_0_50px_rgba(244,114,182,0.8)] border-4 border-white/80"
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white flex items-center justify-center shadow-[0_0_50px_rgba(244,114,182,0.8)] border-4 border-white/80"
               >
-                <Play className="w-10 h-10 fill-current ml-1" />
+                <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-current ml-1" />
               </motion.div>
-              <span className="font-outfit font-extrabold text-white tracking-widest text-sm sm:text-base uppercase mt-6 drop-shadow-md">
+              <span className="font-outfit font-extrabold text-white tracking-widest text-xs sm:text-sm uppercase mt-6 drop-shadow-md text-center">
                 TAP TO PLAY ROYAL AURA REEL 🎬✨
               </span>
             </div>
           )}
 
           {/* Custom Hover Control Bar */}
-          <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-between text-white">
-            <div className="flex items-center gap-4">
+          <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-between text-white z-30">
+            <div className="flex items-center gap-3">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   togglePlay();
                 }}
-                className="p-3 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md transition"
+                className="p-2.5 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md transition"
               >
-                {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 fill-current ml-0.5" />}
+                {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
               </button>
-              <span className="font-mono text-xs font-bold tracking-wider uppercase">
-                {isPlaying ? "PLAYING IN HIGH AURA 🌟" : "PAUSED ⏸️"}
+              <span className="font-mono text-[10px] sm:text-xs font-bold tracking-wider uppercase">
+                {isPlaying ? "PLAYING 🌟" : "PAUSED ⏸️"}
               </span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <button
                 onClick={toggleMute}
-                className="p-3 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md transition"
+                className="p-2.5 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md transition"
                 title={isMuted ? "Unmute" : "Mute"}
               >
-                {isMuted ? <VolumeX className="w-5 h-5 text-rose-300" /> : <Volume2 className="w-5 h-5" />}
+                {isMuted ? <VolumeX className="w-4 h-4 text-rose-300" /> : <Volume2 className="w-4 h-4" />}
               </button>
               <button
                 onClick={handleFullscreen}
-                className="p-3 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md transition"
+                className="p-2.5 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md transition"
                 title="Fullscreen"
               >
-                <Maximize2 className="w-5 h-5" />
+                <Maximize2 className="w-4 h-4" />
               </button>
             </div>
           </div>
