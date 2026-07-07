@@ -36,7 +36,7 @@ export default function HeroSection() {
 
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center z-10">
         {/* Left Typography Column */}
-        <div className="lg:col-span-6 space-y-6 text-center lg:text-left z-20">
+        <div className="lg:col-span-5 space-y-6 text-center lg:text-left z-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,19 +89,19 @@ export default function HeroSection() {
         </div>
 
         {/* Right Photo Column: Blended into background with spotlight & petals in front! */}
-        <div className="lg:col-span-6 relative flex items-center justify-center min-h-[500px] md:min-h-[650px] w-full">
+        <div className="lg:col-span-7 relative flex items-center justify-center min-h-[550px] sm:min-h-[680px] md:min-h-[780px] w-full">
           {/* Subtle Ambient Radial Glow behind Anshi */}
-          <div className="absolute w-[350px] md:w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-pink-500/20 via-purple-600/20 to-amber-400/20 blur-[90px] -z-10" />
+          <div className="absolute w-[400px] md:w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-pink-500/25 via-purple-600/20 to-amber-400/20 blur-[100px] -z-10" />
 
-          {/* Blended Photo Container (No boxy card frame! Seamless radial and edge gradient blending!) */}
+          {/* Blended Photo Container (MUCH BIGGER! Spans up to 680px wide and 930px tall!) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
             style={{
-              transform: `perspective(1000px) rotateY(${mousePosition.x * 20}deg) rotateX(${-mousePosition.y * 20}deg)`,
+              transform: `perspective(1000px) rotateY(${mousePosition.x * 15}deg) rotateX(${-mousePosition.y * 15}deg)`,
             }}
-            className="relative w-[300px] sm:w-[360px] md:w-[420px] aspect-[3/4.2] rounded-[48px] overflow-hidden transition-transform duration-300 ease-out z-10"
+            className="relative w-full max-w-[420px] sm:max-w-[540px] md:max-w-[620px] lg:max-w-[680px] aspect-[3/4.1] rounded-[56px] overflow-hidden transition-transform duration-300 ease-out z-10 shadow-[0_20px_80px_rgba(0,0,0,0.8)]"
           >
             {/* The Attached Blue Sweater Photo (photo-main-anshi.png) */}
             <Image
@@ -109,7 +109,7 @@ export default function HeroSection() {
               alt="Anshi - The Main Character"
               fill
               priority
-              sizes="(max-width: 768px) 360px, 420px"
+              sizes="(max-width: 768px) 420px, 680px"
               className="object-cover object-top scale-105 hover:scale-110 transition-transform duration-700 ease-out"
             />
 

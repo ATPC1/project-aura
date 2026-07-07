@@ -11,14 +11,12 @@ import MemoryTimeline from "@/components/sections/MemoryTimeline";
 import AuraDefenderGame from "@/components/sections/AuraDefenderGame";
 import SecretSection from "@/components/sections/SecretSection";
 import PremiumEnding from "@/components/sections/PremiumEnding";
-import PageSurfer from "@/components/effects/PageSurfer";
 
 export default function Home() {
   const [isBooting, setIsBooting] = useState(true);
 
   return (
     <main className="min-h-screen relative overflow-hidden selection:bg-pink-500 selection:text-black">
-      <PageSurfer />
       <AnimatePresence mode="wait">
         {isBooting && <CinematicIntro onComplete={() => setIsBooting(false)} />}
       </AnimatePresence>
