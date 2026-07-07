@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CinematicIntro from "@/components/sections/CinematicIntro";
 import HeroSection from "@/components/sections/HeroSection";
+import CinematicReel from "@/components/sections/CinematicReel";
 import AiPersonality from "@/components/sections/AiPersonality";
 import Achievements from "@/components/sections/Achievements";
 import PhotoGallery from "@/components/sections/PhotoGallery";
@@ -28,6 +29,7 @@ export default function Home() {
         className="space-y-12 md:space-y-24 pb-24"
       >
         <HeroSection />
+        <CinematicReel />
         <AiPersonality />
         <Achievements />
         <PhotoGallery />
