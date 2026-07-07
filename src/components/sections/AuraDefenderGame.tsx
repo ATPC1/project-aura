@@ -346,8 +346,8 @@ export default function AuraDefenderGame() {
           </div>
         </div>
 
-        {/* HTML5 Canvas Arena */}
-        <div className="relative w-full aspect-[5/3] max-h-[480px] rounded-2xl overflow-hidden bg-[#0a0a0e] border border-white/10 shadow-inner flex items-center justify-center">
+        {/* HTML5 Canvas Arena (Much taller & spacious on mobile so button never cuts off!) */}
+        <div className="relative w-full aspect-[4/4.5] sm:aspect-[5/3] min-h-[420px] sm:min-h-[480px] max-h-[580px] rounded-3xl overflow-hidden bg-[#0a0a0e] border border-white/10 shadow-inner flex items-center justify-center">
           <canvas
             ref={canvasRef}
             width={800}
@@ -364,23 +364,23 @@ export default function AuraDefenderGame() {
 
           {/* Overlay Start Button when not playing */}
           {!isPlaying && !isWon && (
-            <div className="absolute inset-0 bg-black/65 backdrop-blur-sm flex flex-col items-center justify-center gap-6 p-6 text-center">
-              <div className="p-4 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400">
-                <Crown className="w-12 h-12 animate-bounce" />
+            <div className="absolute inset-0 bg-black/75 backdrop-blur-md flex flex-col items-center justify-center gap-4 sm:gap-6 p-4 sm:p-6 text-center overflow-y-auto z-20">
+              <div className="p-3 sm:p-4 rounded-full bg-pink-500/20 border border-pink-500/40 text-pink-400 shrink-0 shadow-[0_0_20px_rgba(244,114,182,0.4)]">
+                <Crown className="w-8 h-8 sm:w-12 sm:h-12 animate-bounce" />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-2xl md:text-3xl font-bold font-outfit text-white">
+              <div className="space-y-1 sm:space-y-2 max-w-md">
+                <h3 className="text-2xl sm:text-3xl font-black font-outfit text-white tracking-tight">
                   Zap the 4 Flower Zombies!
                 </h3>
-                <p className="text-white/70 font-light text-sm max-w-md">
-                  Our girl avatar standing in the corner is ready! Hold down your mouse button to fire a continuous laser line and eliminate the 4 static flower zombies!
+                <p className="text-white/80 font-light text-xs sm:text-sm leading-relaxed">
+                  Our girl avatar standing in the corner is ready! Hold down your mouse or touch screen to fire a continuous laser line and eliminate the 4 static flower zombies!
                 </p>
               </div>
               <button
                 onClick={initGame}
-                className="bg-gradient-to-r from-pink-500 via-purple-500 to-amber-400 text-black font-bold px-10 py-4 rounded-full font-outfit text-base uppercase tracking-wider hover:scale-105 transition shadow-xl shadow-pink-500/20"
+                className="w-full sm:w-auto bg-gradient-to-r from-pink-500 via-purple-500 to-amber-400 text-black font-extrabold px-8 py-4 sm:px-12 sm:py-5 rounded-full font-outfit text-base sm:text-lg uppercase tracking-wider hover:scale-105 active:scale-95 transition shadow-[0_0_50px_rgba(244,114,182,0.7)] shrink-0 mt-2 flex items-center justify-center gap-2 animate-pulse border border-white/30"
               >
-                Start Flower Game
+                <span>Start Flower Game</span>
               </button>
             </div>
           )}
