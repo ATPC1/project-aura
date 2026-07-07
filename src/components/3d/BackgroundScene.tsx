@@ -98,7 +98,7 @@ function FallingPetals({ isMobile }: { isMobile: boolean }) {
       rotZ: Math.random() * Math.PI,
       rotSpeedX: (Math.random() - 0.5) * 0.04,
       rotSpeedY: (Math.random() - 0.5) * 0.04,
-      scale: 0.6 + Math.random() * 0.8,
+      scale: 0.9 + Math.random() * 1.2,
     }));
   }, [count]);
 
@@ -127,14 +127,14 @@ function FallingPetals({ isMobile }: { isMobile: boolean }) {
 
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
-      <circleGeometry args={[0.2, 6]} />
+      <circleGeometry args={[0.28, 6]} />
       <meshStandardMaterial
-        color="#f472b6"
-        roughness={0.3}
-        metalness={0.1}
+        color="#e11d48"
+        roughness={0.2}
+        metalness={0.2}
         side={THREE.DoubleSide}
         transparent
-        opacity={0.7}
+        opacity={0.95}
       />
     </instancedMesh>
   );
@@ -165,11 +165,11 @@ function AuraDust({ isMobile }: { isMobile: boolean }) {
     <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color="#fbcfe8"
-        size={0.05}
+        color="#f43f5e"
+        size={0.07}
         sizeAttenuation={true}
         depthWrite={false}
-        opacity={0.6}
+        opacity={0.8}
         blending={THREE.AdditiveBlending}
       />
     </Points>

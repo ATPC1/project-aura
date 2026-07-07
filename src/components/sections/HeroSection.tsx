@@ -88,12 +88,12 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Right Photo Column: Blended into background with spotlight & petals in front! */}
+        {/* Right Photo Column: Standalone 3D Card Effect without merging into background! */}
         <div className="lg:col-span-7 relative flex items-center justify-center min-h-[550px] sm:min-h-[680px] md:min-h-[780px] w-full">
           {/* Subtle Ambient Radial Glow behind Anshi */}
-          <div className="absolute w-[400px] md:w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-rose-300/40 via-pink-300/30 to-amber-200/30 blur-[100px] -z-10" />
+          <div className="absolute w-[400px] md:w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-rose-400/40 via-pink-400/30 to-amber-200/30 blur-[100px] -z-10" />
 
-          {/* Blended Photo Container (MUCH BIGGER! Spans up to 680px wide and 930px tall!) */}
+          {/* Standalone 3D Photo Card (Clean, unmerged, with white & rose gold frame and realistic shadow!) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -101,7 +101,7 @@ export default function HeroSection() {
             style={{
               transform: `perspective(1000px) rotateY(${mousePosition.x * 15}deg) rotateX(${-mousePosition.y * 15}deg)`,
             }}
-            className="relative w-full max-w-[420px] sm:max-w-[540px] md:max-w-[620px] lg:max-w-[680px] aspect-[3/4.1] rounded-[56px] overflow-hidden transition-transform duration-300 ease-out z-10 shadow-[0_20px_60px_rgba(244,114,182,0.25)] border-4 border-white/80"
+            className="relative w-full max-w-[420px] sm:max-w-[540px] md:max-w-[620px] lg:max-w-[680px] aspect-[3/4.1] rounded-[48px] overflow-hidden transition-transform duration-300 ease-out z-10 shadow-[0_30px_90px_rgba(225,29,72,0.3)] border-4 sm:border-8 border-white bg-white group"
           >
             {/* The Attached Blue Sweater Photo (photo-main-anshi.png) */}
             <Image
@@ -110,54 +110,49 @@ export default function HeroSection() {
               fill
               priority
               sizes="(max-width: 768px) 420px, 680px"
-              className="object-cover object-top scale-105 hover:scale-110 transition-transform duration-700 ease-out"
+              className="object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
-            {/* Seamless Blending Overlays: Fades edges and bottom directly into light warm pink BG! */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#fff5f7] via-[#fff5f7]/20 to-transparent opacity-90 pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#fff5f7]/50 via-transparent to-[#fff5f7]/50 opacity-80 pointer-events-none" />
-            <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(255,245,247,0.9)] pointer-events-none rounded-[56px]" />
+            {/* Subtle Top Gloss / Glass Reflection */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/30 opacity-60 pointer-events-none" />
 
-            {/* Spotlight Glare Effect on her face */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-rose-200/40 opacity-70 pointer-events-none" />
-
-            {/* Floating Royal Caption blended at bottom of photo */}
-            <div className="absolute bottom-6 left-0 right-0 text-center z-20 pointer-events-none">
-              <span className="font-serif italic text-2xl md:text-3xl font-bold text-[#2d0a14] tracking-wide drop-shadow-[0_2px_12px_rgba(255,255,255,0.9)]">
+            {/* Clean Glass Caption Bar at bottom (Does NOT blur or merge the photo!) */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#2d0a14]/90 via-[#2d0a14]/60 to-transparent text-center z-20 pointer-events-none">
+              <span className="font-serif italic text-2xl md:text-3xl font-bold text-white tracking-wide drop-shadow-md">
                 Effortless Royalty
               </span>
-              <div className="flex items-center justify-center gap-1.5 text-rose-600 font-mono text-[10px] tracking-widest uppercase font-extrabold mt-1">
-                <Heart className="w-3 h-3 fill-current text-rose-500" />
+              <div className="flex items-center justify-center gap-1.5 text-rose-300 font-mono text-[10px] tracking-widest uppercase font-extrabold mt-1">
+                <Heart className="w-3 h-3 fill-current text-rose-400" />
                 <span>SHONA • THE ONE & ONLY</span>
-                <Heart className="w-3 h-3 fill-current text-rose-500" />
+                <Heart className="w-3 h-3 fill-current text-rose-400" />
               </div>
             </div>
           </motion.div>
 
-          {/* FOREGROUND PETALS OVERLAY: Petals falling directly IN FRONT OF and OVER her photo! */}
+          {/* FOREGROUND RED PETALS OVERLAY: Vibrant ruby red petals falling directly IN FRONT OF and OVER her photo! */}
           <div className="absolute inset-0 pointer-events-none z-30 overflow-hidden">
-            {[...Array(12)].map((_, i) => (
+            {[...Array(24)].map((_, i) => (
               <motion.div
                 key={i}
                 initial={{
                   y: -50,
-                  x: (Math.random() - 0.5) * 400,
+                  x: (Math.random() - 0.5) * 450,
                   rotate: Math.random() * 360,
-                  opacity: 0.8,
+                  opacity: 0.9,
                 }}
                 animate={{
-                  y: [0, 600],
-                  x: [(Math.random() - 0.5) * 300, (Math.random() - 0.5) * 400],
+                  y: [0, 650],
+                  x: [(Math.random() - 0.5) * 350, (Math.random() - 0.5) * 450],
                   rotate: [0, 360],
-                  opacity: [0, 0.9, 0.9, 0],
+                  opacity: [0, 0.95, 0.95, 0],
                 }}
                 transition={{
-                  duration: 6 + Math.random() * 5,
+                  duration: 5 + Math.random() * 4,
                   repeat: Infinity,
-                  delay: Math.random() * 5,
+                  delay: Math.random() * 4,
                   ease: "linear",
                 }}
-                className="absolute top-0 left-1/2 w-4 h-6 bg-gradient-to-br from-pink-400/80 to-rose-300/60 rounded-full blur-[0.5px] shadow-[0_0_12px_rgba(244,114,182,0.8)]"
+                className="absolute top-0 left-1/2 w-5 h-8 bg-gradient-to-br from-red-600 to-rose-500 rounded-full blur-[0.3px] shadow-[0_0_15px_rgba(225,29,72,0.8)]"
                 style={{
                   borderRadius: "70% 0% 70% 0%",
                 }}
