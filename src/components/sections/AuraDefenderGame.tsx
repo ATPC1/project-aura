@@ -36,6 +36,127 @@ export default function AuraDefenderGame() {
   const zombies = useRef<Zombie[]>([]);
   const particles = useRef<Particle[]>([]);
 
+  // Web Audio API References for zero-latency synthesized sound effects
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const lastLaserSoundTimeRef = useRef(0);
+  const lastHitSoundTimeRef = useRef(0);
+
+  const getAudioContext = () => {
+    if (!audioCtxRef.current && typeof window !== "undefined") {
+      const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      audioCtxRef.current = new AudioContextClass();
+    }
+    if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
+      audioCtxRef.current.resume();
+    }
+    return audioCtxRef.current;
+  };
+
+  // 🔫 Laser "Pew Pew" Sci-Fi Sound Effect
+  const playLaserSound = () => {
+    try {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      // Rapid frequency drop from high sci-fi pitch to bass
+      osc.type = "sawtooth";
+      osc.frequency.setValueAtTime(950, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.16);
+
+      // Quick snappy envelope
+      gain.gain.setValueAtTime(0.18, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.16);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.16);
+    } catch (e) {
+      // Ignore audio errors if blocked by browser autoplay
+    }
+  };
+
+  // 💥 Zombie Hit Sparkle / Zap Sound
+  const playHitSound = () => {
+    try {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(1400, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.08);
+
+      gain.gain.setValueAtTime(0.12, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.08);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.08);
+    } catch (e) {}
+  };
+
+  // 🎆 Zombie Destruction Boom & Chime Sound
+  const playExplosionSound = () => {
+    try {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      // Play a triumphant harmonic chord (C5, E5, G5, C6)
+      const freqs = [523.25, 659.25, 783.99, 1046.50];
+      freqs.forEach((freq, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.04);
+
+        gain.gain.setValueAtTime(0.2, ctx.currentTime + idx * 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(ctx.currentTime + idx * 0.04);
+        osc.stop(ctx.currentTime + 0.4);
+      });
+    } catch (e) {}
+  };
+
+  // 🏆 Victory Fanfare
+  const playWinSound = () => {
+    try {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const notes = [523.25, 659.25, 783.99, 987.77, 1046.50];
+      notes.forEach((freq, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.1);
+
+        gain.gain.setValueAtTime(0.25, ctx.currentTime + idx * 0.1);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + idx * 0.1 + 0.5);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(ctx.currentTime + idx * 0.1);
+        osc.stop(ctx.currentTime + idx * 0.1 + 0.5);
+      });
+    } catch (e) {}
+  };
+
   const initGame = () => {
     setIsWon(false);
     setIsPlaying(true);
@@ -62,6 +183,7 @@ export default function AuraDefenderGame() {
     setIsPlaying(false);
     isPlayingRef.current = false;
     setIsWon(true);
+    playWinSound();
     confetti({
       particleCount: 300,
       spread: 160,
@@ -90,11 +212,15 @@ export default function AuraDefenderGame() {
   const handleMouseDown = () => {
     if (!isPlayingRef.current) return;
     isFiringRef.current = true;
+    playLaserSound();
+    lastLaserSoundTimeRef.current = Date.now();
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
     if (!isPlayingRef.current) return;
     isFiringRef.current = true;
+    playLaserSound();
+    lastLaserSoundTimeRef.current = Date.now();
     handleTouchMove(e);
   };
 
@@ -141,6 +267,12 @@ export default function AuraDefenderGame() {
           const targetX = mousePos.current.x;
           const targetY = mousePos.current.y;
 
+          // Play repeating laser pew sound every 170ms while holding down!
+          if (Date.now() - lastLaserSoundTimeRef.current > 170) {
+            playLaserSound();
+            lastLaserSoundTimeRef.current = Date.now();
+          }
+
           const angle = Math.atan2(targetY - gunY, targetX - gunX);
           const maxDist = 1000;
           const endX = gunX + Math.cos(angle) * maxDist;
@@ -178,6 +310,12 @@ export default function AuraDefenderGame() {
             if (dist < 40 && dot > 0) {
               zombie.health -= 5;
 
+              // Play subtle hit sound every 90ms when laser is hitting a zombie
+              if (Date.now() - lastHitSoundTimeRef.current > 90) {
+                playHitSound();
+                lastHitSoundTimeRef.current = Date.now();
+              }
+
               for (let p = 0; p < 4; p++) {
                 particles.current.push({
                   x: zombie.x + (Math.random() - 0.5) * 20,
@@ -190,6 +328,7 @@ export default function AuraDefenderGame() {
               }
 
               if (zombie.health <= 0) {
+                playExplosionSound();
                 for (let p = 0; p < 30; p++) {
                   particles.current.push({
                     x: zombie.x,
