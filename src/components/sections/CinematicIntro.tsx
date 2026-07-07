@@ -52,21 +52,21 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 1.05, filter: "blur(12px)" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed inset-0 z-50 bg-[#070709] flex flex-col items-center justify-center p-6 select-none"
+      className="fixed inset-0 z-50 bg-[#fff5f7] flex flex-col items-center justify-center p-6 select-none"
     >
       {/* Ambient Glows */}
-      <div className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-br from-pink-500/20 via-purple-500/10 to-transparent blur-[120px] pointer-events-none" />
+      <div className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-br from-rose-400/30 via-pink-300/20 to-transparent blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-md w-full glass-panel rounded-3xl p-8 border border-white/10 shadow-2xl text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-md w-full glass-panel rounded-3xl p-8 border border-rose-300 shadow-xl text-center flex flex-col items-center bg-white/95">
         {/* Animated Icon Ring */}
         <div className="relative mb-6">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            className="w-20 h-20 rounded-full border border-pink-500/30 border-t-pink-400 flex items-center justify-center"
+            className="w-20 h-20 rounded-full border border-rose-300 border-t-rose-500 flex items-center justify-center"
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <CurrentIcon className="w-8 h-8 text-pink-400 animate-pulse" />
+            <CurrentIcon className="w-8 h-8 text-rose-500 animate-pulse" />
           </div>
         </div>
 
@@ -81,10 +81,10 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
               transition={{ duration: 0.3 }}
               className="space-y-1"
             >
-              <h2 className="text-xl md:text-2xl font-bold tracking-tight text-white font-outfit">
+              <h2 className="text-xl md:text-2xl font-bold tracking-tight text-[#2d0a14] font-outfit">
                 {messages[step]?.text}
               </h2>
-              <p className="font-mono text-[11px] tracking-[0.2em] text-pink-300/70">
+              <p className="font-mono text-[11px] tracking-[0.2em] text-rose-600 font-bold">
                 {messages[step]?.sub}
               </p>
             </motion.div>
@@ -93,14 +93,14 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
 
         {/* Progress Bar */}
         <div className="w-full mt-6 space-y-2">
-          <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+          <div className="h-1.5 w-full bg-rose-100 border border-rose-200 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-pink-500 via-purple-400 to-amber-300"
+              className="h-full bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400"
               style={{ width: `${progress}%` }}
               transition={{ ease: "linear" }}
             />
           </div>
-          <div className="flex justify-between font-mono text-[10px] text-white/40">
+          <div className="flex justify-between font-mono text-[10px] text-[#64283c]/70 font-bold">
             <span>AURA OS v.1.0</span>
             <span>{progress}%</span>
           </div>
@@ -108,8 +108,8 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
       </div>
 
       {/* Footer Branding */}
-      <div className="absolute bottom-6 font-mono text-[10px] tracking-widest text-white/30 flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+      <div className="absolute bottom-6 font-mono text-[10px] tracking-widest text-[#64283c]/60 font-bold flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-emerald-600 animate-ping" />
         SECURE LINK · LIMITED EDITION 001
       </div>
     </motion.div>

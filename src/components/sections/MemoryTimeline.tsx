@@ -67,16 +67,16 @@ export default function MemoryTimeline() {
     <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto relative z-10">
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-        <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-pink-500/30">
-          <Clock className="w-4 h-4 text-pink-400" />
-          <span className="font-mono text-[11px] tracking-[0.3em] text-pink-300 uppercase">
+        <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm">
+          <Clock className="w-4 h-4 text-rose-600" />
+          <span className="font-mono text-[11px] tracking-[0.3em] text-rose-600 uppercase font-bold">
             SECTION 05 · CHRONOLOGICAL ARCHIVE
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight font-outfit text-white">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight font-outfit text-[#2d0a14]">
           The Memory <span className="text-gradient-aura">Timeline</span>
         </h2>
-        <p className="text-white/60 text-base md:text-lg font-light">
+        <p className="text-[#64283c] text-base md:text-lg font-light">
           From the legendary arrival on May 15, 2006 to present day royalty. Trace the key chapters that built the Anshi experience.
         </p>
       </div>
@@ -84,7 +84,7 @@ export default function MemoryTimeline() {
       {/* Timeline Container */}
       <div className="relative">
         {/* Center Vertical Glowing Line */}
-        <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-500 via-purple-500 to-amber-400 -translate-x-1/2 opacity-40 shadow-[0_0_15px_rgba(244,114,182,0.8)]" />
+        <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-rose-400 via-pink-500 to-amber-400 -translate-x-1/2 opacity-60 shadow-[0_0_15px_rgba(244,114,182,0.6)]" />
 
         <div className="space-y-16">
           {events.map((event, index) => {
@@ -103,14 +103,14 @@ export default function MemoryTimeline() {
                 } gap-8`}
               >
                 {/* Center Node Icon */}
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full glass-card border-2 border-pink-500/80 flex items-center justify-center z-20 shadow-xl shadow-pink-500/30 bg-charcoal group">
-                  <Icon className="w-5 h-5 text-pink-400 group-hover:scale-125 transition-transform duration-300" />
+                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white border-2 border-rose-500 flex items-center justify-center z-20 shadow-md group">
+                  <Icon className="w-5 h-5 text-rose-500 group-hover:scale-125 transition-transform duration-300" />
                 </div>
 
                 {/* Content Card */}
                 <div className="w-full md:w-[calc(50%-40px)] pl-16 md:pl-0">
                   <div
-                    className={`glass-card p-8 rounded-3xl relative overflow-hidden glass-card-hover border border-white/10 ${
+                    className={`glass-card p-8 rounded-3xl relative overflow-hidden glass-card-hover border border-rose-200 bg-white/90 shadow-lg ${
                       isEven ? "md:text-right" : "md:text-left"
                     }`}
                   >
@@ -120,28 +120,28 @@ export default function MemoryTimeline() {
                         isEven ? "md:justify-end" : "md:justify-start"
                       }`}
                     >
-                      <span className="font-mono text-xs tracking-widest text-pink-400 font-bold">
+                      <span className="font-mono text-xs tracking-widest text-rose-600 font-bold">
                         {event.date}
                       </span>
-                      <span className="font-mono text-[10px] tracking-wider px-2.5 py-0.5 rounded-full bg-white/10 text-amber-300 font-semibold border border-white/15">
+                      <span className="font-mono text-[10px] tracking-wider px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 font-bold border border-rose-300">
                         {event.highlight}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl md:text-3xl font-bold font-outfit text-white mb-3">
+                    <h3 className="text-2xl md:text-3xl font-bold font-outfit text-[#2d0a14] mb-3">
                       {event.title}
                     </h3>
 
-                    <p className="text-white/70 font-light leading-relaxed text-sm md:text-base">
+                    <p className="text-[#64283c] font-light leading-relaxed text-sm md:text-base">
                       {event.desc}
                     </p>
 
                     <div
-                      className={`mt-6 pt-4 border-t border-white/10 flex items-center gap-2 font-mono text-[11px] text-white/40 ${
+                      className={`mt-6 pt-4 border-t border-rose-200 flex items-center gap-2 font-mono text-[11px] text-[#64283c]/70 font-bold ${
                         isEven ? "md:justify-end" : "md:justify-start"
                       }`}
                     >
-                      <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                      <Sparkles className="w-3.5 h-3.5 text-purple-600" />
                       <span>CHAPTER #{index + 1} · {event.category}</span>
                     </div>
                   </div>

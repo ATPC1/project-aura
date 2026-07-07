@@ -41,10 +41,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-pink-500/30 shadow-lg"
+            className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-md"
           >
-            <Crown className="w-4 h-4 text-amber-400 animate-bounce" />
-            <span className="font-mono text-xs tracking-[0.3em] text-pink-300 uppercase font-bold">
+            <Crown className="w-4 h-4 text-amber-500 animate-bounce" />
+            <span className="font-mono text-xs tracking-[0.3em] text-rose-600 uppercase font-extrabold">
               THE MAIN CHARACTER · DOB 15.05.2006
             </span>
           </motion.div>
@@ -53,7 +53,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight font-outfit text-white leading-[0.9]"
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight font-outfit text-[#2d0a14] leading-[0.9]"
           >
             Anshi
           </motion.h1>
@@ -62,7 +62,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-2xl text-white/80 font-light max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            className="text-lg md:text-2xl text-[#64283c] font-light max-w-xl mx-auto lg:mx-0 leading-relaxed"
           >
             A cinematic celebration of effortless beauty, contagious laughter, and undeniable royalty. Because standard web pages could never do justice to your aura.
           </motion.p>
@@ -75,14 +75,14 @@ export default function HeroSection() {
           >
             <button
               onClick={scrollToNext}
-              className="bg-gradient-to-r from-pink-500 via-purple-500 to-amber-400 text-black font-bold px-8 py-4 rounded-full font-outfit text-sm uppercase tracking-wider hover:scale-105 transition shadow-[0_0_40px_rgba(244,114,182,0.4)] flex items-center gap-2"
+              className="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 text-white font-extrabold px-8 py-4 rounded-full font-outfit text-sm uppercase tracking-wider hover:scale-105 transition shadow-[0_10px_30px_rgba(244,114,182,0.4)] flex items-center gap-2"
             >
               <span>Explore Her Universe</span>
               <ArrowDown className="w-4 h-4 animate-bounce" />
             </button>
 
-            <div className="glass-panel px-6 py-4 rounded-full text-xs font-mono tracking-widest text-pink-300 border border-white/10 flex items-center gap-2">
-              <Star className="w-4 h-4 text-amber-300 fill-current" />
+            <div className="glass-panel px-6 py-4 rounded-full text-xs font-mono tracking-widest text-rose-600 font-bold border border-rose-300 flex items-center gap-2">
+              <Star className="w-4 h-4 text-amber-500 fill-current" />
               <span>1 OF 1 LIMITED EDITION</span>
             </div>
           </motion.div>
@@ -91,7 +91,7 @@ export default function HeroSection() {
         {/* Right Photo Column: Blended into background with spotlight & petals in front! */}
         <div className="lg:col-span-7 relative flex items-center justify-center min-h-[550px] sm:min-h-[680px] md:min-h-[780px] w-full">
           {/* Subtle Ambient Radial Glow behind Anshi */}
-          <div className="absolute w-[400px] md:w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-pink-500/25 via-purple-600/20 to-amber-400/20 blur-[100px] -z-10" />
+          <div className="absolute w-[400px] md:w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-rose-300/40 via-pink-300/30 to-amber-200/30 blur-[100px] -z-10" />
 
           {/* Blended Photo Container (MUCH BIGGER! Spans up to 680px wide and 930px tall!) */}
           <motion.div
@@ -101,7 +101,7 @@ export default function HeroSection() {
             style={{
               transform: `perspective(1000px) rotateY(${mousePosition.x * 15}deg) rotateX(${-mousePosition.y * 15}deg)`,
             }}
-            className="relative w-full max-w-[420px] sm:max-w-[540px] md:max-w-[620px] lg:max-w-[680px] aspect-[3/4.1] rounded-[56px] overflow-hidden transition-transform duration-300 ease-out z-10 shadow-[0_20px_80px_rgba(0,0,0,0.8)]"
+            className="relative w-full max-w-[420px] sm:max-w-[540px] md:max-w-[620px] lg:max-w-[680px] aspect-[3/4.1] rounded-[56px] overflow-hidden transition-transform duration-300 ease-out z-10 shadow-[0_20px_60px_rgba(244,114,182,0.25)] border-4 border-white/80"
           >
             {/* The Attached Blue Sweater Photo (photo-main-anshi.png) */}
             <Image
@@ -113,23 +113,23 @@ export default function HeroSection() {
               className="object-cover object-top scale-105 hover:scale-110 transition-transform duration-700 ease-out"
             />
 
-            {/* Seamless Blending Overlays: Fades edges and bottom directly into dark charcoal BG! */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-[#0a0a0e]/30 to-transparent opacity-90 pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0e]/60 via-transparent to-[#0a0a0e]/60 opacity-80 pointer-events-none" />
-            <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(10,10,14,0.9)] pointer-events-none rounded-[48px]" />
+            {/* Seamless Blending Overlays: Fades edges and bottom directly into light warm pink BG! */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#fff5f7] via-[#fff5f7]/20 to-transparent opacity-90 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#fff5f7]/50 via-transparent to-[#fff5f7]/50 opacity-80 pointer-events-none" />
+            <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(255,245,247,0.9)] pointer-events-none rounded-[56px]" />
 
             {/* Spotlight Glare Effect on her face */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-pink-300/20 opacity-60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-rose-200/40 opacity-70 pointer-events-none" />
 
             {/* Floating Royal Caption blended at bottom of photo */}
             <div className="absolute bottom-6 left-0 right-0 text-center z-20 pointer-events-none">
-              <span className="font-serif italic text-2xl md:text-3xl font-bold text-white tracking-wide drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+              <span className="font-serif italic text-2xl md:text-3xl font-bold text-[#2d0a14] tracking-wide drop-shadow-[0_2px_12px_rgba(255,255,255,0.9)]">
                 Effortless Royalty
               </span>
-              <div className="flex items-center justify-center gap-1.5 text-pink-300 font-mono text-[10px] tracking-widest uppercase mt-1">
-                <Heart className="w-3 h-3 fill-current text-pink-400" />
+              <div className="flex items-center justify-center gap-1.5 text-rose-600 font-mono text-[10px] tracking-widest uppercase font-extrabold mt-1">
+                <Heart className="w-3 h-3 fill-current text-rose-500" />
                 <span>SHONA • THE ONE & ONLY</span>
-                <Heart className="w-3 h-3 fill-current text-pink-400" />
+                <Heart className="w-3 h-3 fill-current text-rose-500" />
               </div>
             </div>
           </motion.div>

@@ -92,16 +92,16 @@ export default function AiPersonality() {
     <section id="ai-analysis" className="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-purple-500/30">
-          <Sparkles className="w-4 h-4 text-purple-400" />
-          <span className="font-mono text-[11px] tracking-[0.3em] text-purple-300 uppercase">
+        <div className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm">
+          <Sparkles className="w-4 h-4 text-purple-600" />
+          <span className="font-mono text-[11px] tracking-[0.3em] text-purple-700 uppercase font-bold">
             SECTION 02 · BIOMETRIC SCAN
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight font-outfit text-white">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight font-outfit text-[#2d0a14]">
           AI Personality <span className="text-gradient-aura">Analysis</span>
         </h2>
-        <p className="text-white/60 text-base md:text-lg font-light">
+        <p className="text-[#64283c] text-base md:text-lg font-light">
           We fed 18 years of Anshi&apos;s behavioral data into a supercomputer. Click any biometric stat card below to decrypt her classified personality reports.
         </p>
       </div>
@@ -121,38 +121,38 @@ export default function AiPersonality() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => setActiveCard(isSelected ? null : stat.id)}
               className={`glass-card p-6 rounded-3xl cursor-pointer glass-card-hover relative overflow-hidden transition-all duration-300 ${
-                isSelected ? "ring-2 ring-pink-500/80 bg-white/[0.08]" : ""
+                isSelected ? "ring-2 ring-rose-500 bg-white shadow-xl shadow-rose-500/20" : ""
               }`}
             >
               {/* Top Accent Gradient Bar */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.color} opacity-75`} />
+              <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${stat.color} opacity-90`} />
 
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <span className="font-mono text-[10px] tracking-[0.25em] text-white/40 uppercase">
+                  <span className="font-mono text-[10px] tracking-[0.25em] text-[#64283c]/70 uppercase font-bold">
                     {stat.category}
                   </span>
-                  <h3 className="text-2xl font-bold font-outfit text-white mt-1">
+                  <h3 className="text-2xl font-bold font-outfit text-[#2d0a14] mt-1">
                     {stat.title}
                   </h3>
                 </div>
-                <div className={`p-3 rounded-2xl bg-gradient-to-br ${stat.color} bg-opacity-10 shadow-lg`}>
+                <div className={`p-3 rounded-2xl bg-gradient-to-br ${stat.color} shadow-md`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
               </div>
 
               {/* Stat Metric */}
               <div className="mb-4">
-                <div className="text-3xl font-black font-mono tracking-tight text-white">
+                <div className="text-3xl font-black font-mono tracking-tight text-[#2d0a14]">
                   {stat.value}
                 </div>
-                <div className="inline-block mt-1 font-mono text-xs px-2.5 py-1 rounded-md bg-white/10 text-pink-300 font-semibold">
+                <div className="inline-block mt-1 font-mono text-xs px-2.5 py-1 rounded-md bg-rose-100 text-rose-700 font-bold border border-rose-200">
                   {stat.status}
                 </div>
               </div>
 
               {/* Brief Analysis */}
-              <p className="text-sm text-white/70 font-light leading-relaxed mb-4">
+              <p className="text-sm text-[#64283c] font-light leading-relaxed mb-4">
                 {stat.analysis}
               </p>
 
@@ -163,17 +163,17 @@ export default function AiPersonality() {
                   height: isSelected ? "auto" : 0,
                   opacity: isSelected ? 1 : 0,
                 }}
-                className="overflow-hidden border-t border-white/10 pt-3 text-xs text-amber-300/90 font-mono leading-relaxed"
+                className="overflow-hidden border-t border-rose-200 pt-3 text-xs text-[#2d0a14] font-mono leading-relaxed bg-rose-50/50 p-2 rounded-xl mt-2"
               >
-                <div className="font-bold uppercase tracking-wider mb-1 text-pink-400">
+                <div className="font-bold uppercase tracking-wider mb-1 text-rose-600">
                   ⚡ DECRYPTED NOTE:
                 </div>
                 {stat.detail}
               </motion.div>
 
-              <div className="mt-4 flex items-center justify-between text-[11px] font-mono text-white/40">
+              <div className="mt-4 flex items-center justify-between text-[11px] font-mono text-[#64283c]/60 font-bold">
                 <span>CLICK TO {isSelected ? "COLLAPSE" : "DECRYPT"}</span>
-                <span className="text-pink-400">#00{index + 1}</span>
+                <span className="text-rose-500">#00{index + 1}</span>
               </div>
             </motion.div>
           );

@@ -12,7 +12,7 @@ export default function PremiumEnding() {
   return (
     <footer className="relative pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto z-10 text-center overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-amber-400/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-rose-400/30 via-pink-300/20 to-amber-300/20 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Main Closing Statement */}
       <div className="space-y-6 max-w-4xl mx-auto mb-24">
@@ -20,10 +20,10 @@ export default function PremiumEnding() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-white/10"
+          className="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-rose-300 shadow-sm"
         >
-          <Crown className="w-4 h-4 text-amber-400" />
-          <span className="font-mono text-[11px] tracking-[0.3em] text-white/70 uppercase font-bold">
+          <Crown className="w-4 h-4 text-amber-500" />
+          <span className="font-mono text-[11px] tracking-[0.3em] text-rose-600 uppercase font-bold">
             THE FINAL CHAPTER
           </span>
         </motion.div>
@@ -33,7 +33,7 @@ export default function PremiumEnding() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight font-outfit text-white leading-tight"
+          className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight font-outfit text-[#2d0a14] leading-tight"
         >
           There is only <span className="text-gradient-aura italic font-normal">one.</span>
         </motion.h2>
@@ -43,7 +43,7 @@ export default function PremiumEnding() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-white/60 text-lg md:text-xl font-light max-w-2xl mx-auto"
+          className="text-[#64283c] text-lg md:text-xl font-light max-w-2xl mx-auto"
         >
           An award-winning interactive digital tribute. Built to celebrate 18 years of Anshi bringing effortless charm and unmatched elegance to the universe.
         </motion.p>
@@ -57,28 +57,28 @@ export default function PremiumEnding() {
         >
           <button
             onClick={scrollToTop}
-            className="glass-panel px-8 py-4 rounded-full text-xs font-mono tracking-widest uppercase hover:bg-white/10 transition border border-white/20 inline-flex items-center gap-2 text-white group shadow-xl"
+            className="glass-panel px-8 py-4 rounded-full text-xs font-mono tracking-widest uppercase hover:bg-white transition border border-rose-300 inline-flex items-center gap-2 text-[#2d0a14] font-bold group shadow-md bg-white/90"
           >
             <span>Return to Top</span>
-            <ArrowUp className="w-4 h-4 text-pink-400 group-hover:-translate-y-1 transition-transform" />
+            <ArrowUp className="w-4 h-4 text-rose-500 group-hover:-translate-y-1 transition-transform" />
           </button>
         </motion.div>
       </div>
 
       {/* Minimalist Awwwards-Style Credits */}
-      <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-white/40">
+      <div className="border-t border-rose-200 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-[#64283c]/70 font-bold">
         <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-pink-400 animate-pulse" />
+          <Sparkles className="w-4 h-4 text-rose-500 animate-pulse" />
           <span>PROJECT AURA — THE MAIN CHARACTER EXPERIENCE</span>
         </div>
 
         <div className="flex items-center gap-6">
           <span>DOB • 15 MAY 2006</span>
           <span>•</span>
-          <span className="text-white/70">DESIGNED EXCLUSIVELY FOR ANSHI</span>
+          <span className="text-[#64283c]">DESIGNED EXCLUSIVELY FOR ANSHI</span>
         </div>
 
-        <div className="flex items-center gap-1 text-pink-400">
+        <div className="flex items-center gap-1 text-rose-600 font-extrabold">
           <span>BUILT WITH</span>
           <Heart className="w-3.5 h-3.5 fill-current" />
           <span>& INFINITE AURA</span>

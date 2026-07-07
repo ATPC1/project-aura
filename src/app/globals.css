@@ -2,25 +2,25 @@
 
 @layer base {
   :root {
-    --bg-dark: #070709;
-    --charcoal: #0e0e12;
-    --card-bg: rgba(255, 255, 255, 0.035);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --pink-glow: #f472b6;
-    --purple-glow: #c084fc;
-    --gold-glow: #fbbf24;
+    --bg-dark: #fff5f7;
+    --charcoal: #ffe4ec;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: rgba(244, 114, 182, 0.4);
+    --pink-glow: #e11d48;
+    --purple-glow: #9333ea;
+    --gold-glow: #d97706;
     --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-outfit: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-mono: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   body {
-    background-color: var(--bg-dark);
-    color: #f3f4f6;
+    background-color: #fff5f7;
+    color: #2d0a14;
     font-family: var(--font-inter), sans-serif;
     overflow-x: hidden;
-    selection-background-color: var(--pink-glow);
-    selection-color: #000000;
+    selection-background-color: #fb7185;
+    selection-color: #ffffff;
   }
 }
 
@@ -44,18 +44,21 @@ html.lenis, html.lenis body {
 /* Glassmorphism & Luxury Utilities */
 @layer utilities {
   .glass-panel {
-    background: rgba(255, 255, 255, 0.035);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 182, 193, 0.6);
+    box-shadow: 0 8px 32px rgba(244, 114, 182, 0.12);
+    color: #2d0a14;
   }
 
   .glass-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.015) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 240, 245, 0.75) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(244, 114, 182, 0.35);
+    box-shadow: 0 15px 40px rgba(244, 114, 182, 0.15);
+    color: #2d0a14;
   }
 
   .glass-card-hover {
@@ -63,14 +66,14 @@ html.lenis, html.lenis body {
   }
 
   .glass-card-hover:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 100%);
-    border-color: rgba(244, 114, 182, 0.35);
-    box-shadow: 0 25px 60px rgba(244, 114, 182, 0.15), 0 0 20px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 228, 236, 0.85) 100%);
+    border-color: rgba(225, 29, 72, 0.5);
+    box-shadow: 0 20px 50px rgba(225, 29, 72, 0.2), 0 0 20px rgba(255, 255, 255, 0.8);
     transform: translateY(-4px);
   }
 
   .text-gradient-aura {
-    background: linear-gradient(135deg, #ffffff 0%, #f472b6 45%, #c084fc 75%, #fbbf24 100%);
+    background: linear-gradient(135deg, #2d0a14 0%, #be185d 45%, #9333ea 75%, #b45309 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
