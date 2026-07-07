@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-dark: #070709;
+    --charcoal: #0e0e12;
+    --card-bg: rgba(255, 255, 255, 0.035);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --pink-glow: #f472b6;
+    --purple-glow: #c084fc;
+    --gold-glow: #fbbf24;
+    --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-outfit: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #f3f4f6;
+    font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+    selection-background-color: var(--pink-glow);
+    selection-color: #000000;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Lenis Smooth Scroll Rules */
+html.lenis, html.lenis body {
+  height: auto;
 }
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Glassmorphism & Luxury Utilities */
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.015) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border-color: rgba(244, 114, 182, 0.35);
+    box-shadow: 0 25px 60px rgba(244, 114, 182, 0.15), 0 0 20px rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .text-gradient-aura {
+    background: linear-gradient(135deg, #ffffff 0%, #f472b6 45%, #c084fc 75%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .text-gradient-rose {
+    background: linear-gradient(135deg, #f9a8d4 0%, #f43f5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #fef08a 0%, #fbbf24 50%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(244, 114, 182, 0.5), rgba(192, 132, 252, 0.2), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* Background Grain Texture */
+.bg-grain {
+  background-image: radial-gradient(rgba(244, 114, 182, 0.08) 1px, transparent 1px),
+                    radial-gradient(rgba(192, 132, 252, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Permanently Hide Next.js Development Issue / Indicator Badge */
+nextjs-portal,
+#nextjs-dev-tools-indicator,
+[data-nextjs-toast],
+[data-nextjs-dev-tools-button],
+nextjs-dev-tools-button,
+#next-logo,
+.nextjs-toast-errors-parent,
+[class*="nextjs-toast"],
+[class*="dev-tools"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
