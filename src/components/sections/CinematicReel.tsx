@@ -17,6 +17,17 @@ export default function CinematicReel() {
       videoRef.current.pause();
       setIsPlaying(false);
     } else {
+      // Pause any other videos across the page before playing this one
+      if (typeof document !== "undefined") {
+        document.querySelectorAll("video").forEach((vid) => {
+          if (vid !== videoRef.current) {
+            try {
+              vid.pause();
+            } catch (e) {}
+          }
+        });
+      }
+
       videoRef.current.play();
       setIsPlaying(true);
       confetti({
@@ -106,6 +117,7 @@ export default function CinematicReel() {
             className="absolute inset-0 w-full h-full object-cover blur-xl opacity-60 scale-110 pointer-events-none"
             loop
             playsInline
+            muted={true}
           />
 
           {/* Main Foreground Video (object-contain guarantees her head is NEVER cut off!) */}

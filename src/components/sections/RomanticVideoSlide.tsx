@@ -42,6 +42,15 @@ export default function RomanticVideoSlide() {
   };
 
   const handleOpen = () => {
+    // Pause any other videos currently playing on the page (e.g. CinematicReel) so audio tracks don't collide or echo!
+    if (typeof document !== "undefined") {
+      document.querySelectorAll("video").forEach((vid) => {
+        try {
+          vid.pause();
+        } catch (e) {}
+      });
+    }
+
     playRomanticChime();
     confetti({
       particleCount: 180,
@@ -62,6 +71,11 @@ export default function RomanticVideoSlide() {
   };
 
   const handleClose = () => {
+    if (videoRef.current) {
+      try {
+        videoRef.current.pause();
+      } catch (e) {}
+    }
     if (typeof document !== "undefined" && document.fullscreenElement) {
       document.exitFullscreen().catch(() => {});
     }
@@ -181,6 +195,7 @@ export default function RomanticVideoSlide() {
                 loop
                 playsInline
                 autoPlay
+                muted={true}
               />
 
               {/* Main Foreground Video with object-contain to ensure ZERO cropping! */}
